@@ -26,3 +26,13 @@ body {
     height: auto;
     opacity: 0.9;
 }
+
+footer { 
+    /* 
+        El footer utiliza márgenes negativos a la izquierda y derecha 
+        para extender su contenido más allá del contenedor principal, 
+        logrando alineación o efecto de ancho completo visual.
+    */
+     margin-left: -1.5rem; 
+     margin-right: -1.5rem;
+}
