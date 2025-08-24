@@ -5,93 +5,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú Digital</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <div class="container py-4">
-        <div class="menu-card mx-auto p-4">
-            <h1 class="text-center fw-bold mb-4">MENÚ DIGITAL</h1>
+    <main class="container py-4">
+        <section class="menu-card mx-auto p-4">
+            <header>
+                <h1 class="text-center fw-bold mb-4">MENÚ DIGITAL</h1>
+            </header>
 
-            <!-- Tabs -->
-            <ul class="nav nav-tabs justify-content-center mb-3" id="menuTabs">
-                <li class="nav-item"><button class="nav-link active" data-bs-target="#sugerencias">Sugerencias</button>
-                </li>
-                <li class="nav-item"><button class="nav-link" data-bs-target="#cafeteria">Cafetería</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-target="#dulces">Dulces</button></li>
-                <li class="nav-item"><button class="nav-link" data-bs-target="#bebidas">Bebidas</button></li>
-            </ul>
+            <!-- Pestañas de navegación del menú -->
+            <nav>
+                <ul class="nav nav-tabs justify-content-center mb-3" id="menuTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="sugerencias-tab" data-bs-toggle="tab" data-bs-target="#sugerencias" type="button" role="tab" aria-controls="sugerencias" aria-selected="true">Sugerencias</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="cafeteria-tab" data-bs-toggle="tab" data-bs-target="#cafeteria" type="button" role="tab" aria-controls="cafeteria" aria-selected="false">Cafetería</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="dulces-tab" data-bs-toggle="tab" data-bs-target="#dulces" type="button" role="tab" aria-controls="dulces" aria-selected="false">Dulces</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="bebidas-tab" data-bs-toggle="tab" data-bs-target="#bebidas" type="button" role="tab" aria-controls="bebidas" aria-selected="false">Bebidas</button>
+                    </li>
+                </ul>
+            </nav>
 
-            <!-- Secciones -->
-            <div id="sugerencias" class="menu-section">
-                <h5 class="fw-bold mb-3">SUGERENCIAS</h5>
-                <div class="menu-item d-flex align-items-center">
-                    <img src="https://lovefoodfeed.com/wp-content/uploads/2023/09/Pesto-ciabatta-bruschetta-1200-07.jpg"
-                        class="thumb me-3">
-                    <div class="flex-grow-1">
-                        <p class="mb-1 fw-semibold">Bruschetta</p>
-                        <small class="text-muted">Pan con tomate y albahaca</small>
-                    </div>
-                    <span class="fw-bold">$3200</span>
-                </div>
-                <div class="menu-item d-flex align-items-center">
-                    <img src="https://ariztia.com/wp-content/uploads/2023/11/ensalada-cesar-de-pollo.jpg"
-                        class="thumb me-3">
-                    <div class="flex-grow-1">
-                        <p class="mb-1 fw-semibold">Ensalada Cesar</p>
-                        <small class="text-muted">Clásica con parmesano</small>
-                    </div>
-                    <span class="fw-bold">$8000</span>
-                </div>
+            <!-- Secciones del menú (contenido de cada pestaña) -->
+            <div class="tab-content">
+                <!-- Sugerencias -->
+                <section id="sugerencias" class="tab-pane fade show active" role="tabpanel" aria-labelledby="sugerencias-tab">
+                    <h2 class="fw-bold mb-3 fs-5">SUGERENCIAS</h2>
+                    <article class="menu-item d-flex align-items-center">
+                        <img src="https://lovefoodfeed.com/wp-content/uploads/2023/09/Pesto-ciabatta-bruschetta-1200-07.jpg"
+                            class="thumb me-3" alt="Bruschetta">
+                        <div class="flex-grow-1">
+                            <p class="mb-1 fw-semibold">Bruschetta</p>
+                            <small class="text-muted">Pan con tomate y albahaca</small>
+                        </div>
+                        <span class="fw-bold">$3200</span>
+                    </article>
+                    <article class="menu-item d-flex align-items-center">
+                        <img src="https://ariztia.com/wp-content/uploads/2023/11/ensalada-cesar-de-pollo.jpg"
+                            class="thumb me-3" alt="Ensalada Cesar">
+                        <div class="flex-grow-1">
+                            <p class="mb-1 fw-semibold">Ensalada Cesar</p>
+                            <small class="text-muted">Clásica con parmesano</small>
+                        </div>
+                        <span class="fw-bold">$8000</span>
+                    </article>
+                </section>
+
+                <!-- Cafetería -->
+                <section id="cafeteria" class="tab-pane fade" role="tabpanel" aria-labelledby="cafeteria-tab">
+                    <h2 class="fw-bold mb-3 fs-5">CAFETERÍA</h2>
+                    <article class="menu-item d-flex align-items-center">
+                        <img src="https://www.marketresearchintellect.com/images/blogs/sipping-success-exploring-the-dynamics-of-the-espresso-coffee-market.webp"
+                            class="thumb me-3" alt="Espresso">
+                        <div class="flex-grow-1">
+                            <p class="mb-1 fw-semibold">Espresso</p>
+                            <small class="text-muted">Pocillo 20 ml</small>
+                        </div>
+                        <span class="fw-bold">$2500</span>
+                    </article>
+                </section>
+
+                <!-- Dulces -->
+                <section id="dulces" class="tab-pane fade" role="tabpanel" aria-labelledby="dulces-tab">
+                    <h2 class="fw-bold mb-3 fs-5">DULCES</h2>
+                    <article class="menu-item d-flex align-items-center">
+                        <img src="https://www.paulinacocina.net/wp-content/uploads/2020/01/receta-de-tiramisu-facil-y-economico-1740483918.jpg"
+                            class="thumb me-3" alt="Tiramisú">
+                        <div class="flex-grow-1">
+                            <p class="mb-1 fw-semibold">Tiramisú</p>
+                            <small class="text-muted">Clásico italiano</small>
+                        </div>
+                        <span class="fw-bold">$6800</span>
+                    </article>
+                </section>
+
+                <!-- Bebidas -->
+                <section id="bebidas" class="tab-pane fade" role="tabpanel" aria-labelledby="bebidas-tab">
+                    <h2 class="fw-bold mb-3 fs-5">BEBIDAS</h2>
+                    <article class="menu-item d-flex align-items-center">
+                        <img src="https://blenderartists.org/uploads/default/original/4X/0/8/9/089cd2efdf004cc94981716464f82da8d2a44645.jpeg"
+                            class="thumb me-3" alt="Gaseosa">
+                        <div class="flex-grow-1">
+                            <p class="mb-1 fw-semibold">Gaseosa</p>
+                            <small class="text-muted">Línea Coca-Cola</small>
+                        </div>
+                        <span class="fw-bold">$2000</span>
+                    </article>
+                </section>
             </div>
 
-            <div id="cafeteria" class="menu-section d-none">
-                <h5 class="fw-bold mb-3">CAFETERÍA</h5>
-                <div class="menu-item d-flex align-items-center">
-                    <img src="https://www.marketresearchintellect.com/images/blogs/sipping-success-exploring-the-dynamics-of-the-espresso-coffee-market.webp"
-                        class="thumb me-3">
-                    <div class="flex-grow-1">
-                        <p class="mb-1 fw-semibold">Espresso</p>
-                        <small class="text-muted">Pocillo 20 ml</small>
-                    </div>
-                    <span class="fw-bold">$2500</span>
-                </div>
-            </div>
-
-            <div id="dulces" class="menu-section d-none">
-                <h5 class="fw-bold mb-3">DULCES</h5>
-                <div class="menu-item d-flex align-items-center">
-                    <img src="https://www.paulinacocina.net/wp-content/uploads/2020/01/receta-de-tiramisu-facil-y-economico-1740483918.jpg"
-                        class="thumb me-3">
-                    <div class="flex-grow-1">
-                        <p class="mb-1 fw-semibold">Tiramisú</p>
-                        <small class="text-muted">Clásico italiano</small>
-                    </div>
-                    <span class="fw-bold">$6.80</span>
-                </div>
-            </div>
-
-            <div id="bebidas" class="menu-section d-none">
-                <h5 class="fw-bold mb-3">BEBIDAS</h5>
-                <div class="menu-item d-flex align-items-center">
-                    <img src="https://blenderartists.org/uploads/default/original/4X/0/8/9/089cd2efdf004cc94981716464f82da8d2a44645.jpeg"
-                        class="thumb me-3">
-                    <div class="flex-grow-1">
-                        <p class="mb-1 fw-semibold">Gaseosa</p>
-                        <small class="text-muted">Linea Coca-Cola</small>
-                    </div>
-                    <span class="fw-bold">$2000</span>
-                </div>
-            </div>
-            <!-- LOGO -->
+            <!-- LOGO del restaurante -->
             <div class="text-center mt-5">
-                <img src="Logo 3 JPG.jpg" alt="Restaurant Logo" class="menu-logo">
+                <img src="/assets/img/Logo 3 JPG.jpg" alt="Restaurant Logo" class="menu-logo">
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
-    <script src="script.js"></script>
+    <!-- Script personalizado -->
+    <script src="/js/script.js"></script>
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
