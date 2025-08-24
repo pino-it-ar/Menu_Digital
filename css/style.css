@@ -1,0 +1,28 @@
+body {
+    background: #f8f8f8;
+}
+
+.menu-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+    max-width: 420px;
+}
+
+.thumb {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.menu-item {
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+}
+
+.menu-logo {
+    width: 120px;
+    height: auto;
+    opacity: 0.9;
+}
