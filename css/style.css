@@ -4,7 +4,7 @@ body {
 
 .menu-card {
     background: #fff;
-    border-radius: 16px;
+    border-radius: 10%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
     max-width: 420px;
 }
@@ -37,6 +37,14 @@ footer {
      margin-right: -1.5rem;
 }
 
-footer_redes {
+.footer_redes {
     font-size: 1.5rem;
+}
+
+.mapa {
+    margin: 0 auto; /* Centra el contenedor */
+    border: 0;
+    width: 100%;
+    max-width: 350px;
+    height: 150px;
 }

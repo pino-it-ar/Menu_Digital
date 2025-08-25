@@ -105,45 +105,42 @@
                     </article>
                 </section>
             </div>
-
+            
             <!-- LOGO del restaurante -->
             <div class="text-center mt-5">
                 <img src="/assets/img/Logo 3 JPG.jpg" alt="Restaurant Logo" class="menu-logo">
             </div>
-            <!--
-                Sección: Footer
+            
+            <!-- Botón para mostrar/ocultar footer -->
+            <div class="text-center mt-3">
+                <button id="toggleFooterBtn" class="btn btn-secondary">Mostrar Footer</button>
+            </div>
 
-                Funciones que debe tener en este caso:
-                - Mostrar información de derechos de autor.
-                - Redes sociales: Incluir íconos y enlaces a las redes sociales del restaurante.
-                - Mapa: Incluir un mapa de ubicación del restaurante.
-                - Iconos: Debe incluir icono/logo tanto del cliente como de los desarrolladores.
+            <br>
 
-                Nota: Personalizar las clases y el contenido según las necesidades específicas del proyecto.
-            -->
-            <footer class="text-center py-4 bg-primary text-white rounded-bottom mt-4 footer">
+            <!-- Footer (oculto inicialmente) -->
+            <footer class="text-center py-4 bg-primary text-white rounded-bottom mt-4 footer d-none">
                 <div class="container">
                     <!-- Redes sociales -->
                     <div class="mb-3 d-flex justify-content-center gap-4 flex-wrap footer_redes">
                         <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="text-white">
-                            <i class="bi bi-facebook fs-3"></i>
+                            <i class="bi bi-facebook fs-2"></i>
                         </a>
                         <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="text-white">
-                            <i class="bi bi-instagram fs-3"></i>
+                            <i class="bi bi-instagram fs-2"></i>
                         </a>
                         <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp" class="text-white">
-                            <i class="bi bi-whatsapp fs-3"></i>
+                            <i class="bi bi-whatsapp fs-2"></i>
                         </a>
                         <a href="https://mi-restaurante.com" target="_blank" aria-label="Sitio web" class="text-white">
-                            <i class="bi bi-globe fs-3"></i>
+                            <i class="bi bi-globe fs-2"></i>
                         </a>
                     </div>
                     <!-- Mapa con la ubicacion -->
-                    <div class="mb-3">
+                    <div class="mb-3 d-flex justify-content-center footer_redes mapa">
                         <iframe
                             title="Ubicación del restaurante"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27773.050264096655!2d-56.868042369840055!3d-37.11372855660769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959c9d28bc630293%3A0xdfb11b35bdc26152!2sCasa%20Oxalis!5e1!3m2!1ses!2sar!4v1756149867603!5m2!1ses!2sar"
-                            style="border:0; width:100%; max-width:350px; height:150px;"
                             allowfullscreen=""
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade">

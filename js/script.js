@@ -18,4 +18,18 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector(tab.dataset.bsTarget).classList.remove("d-none");
         });
     });
+
+    // Funcionalidad para alternar la visibilidad del footer
+    const toggleFooterBtn = document.getElementById("toggleFooterBtn");
+    const footer = document.querySelector("footer");
+
+    toggleFooterBtn.addEventListener("click", () => {
+        footer.classList.toggle("d-none");
+        // Actualizar el texto del botón según estado
+        if (footer.classList.contains("d-none")) {
+            toggleFooterBtn.textContent = "Mostrar Footer";
+        } else {
+            toggleFooterBtn.textContent = "Ocultar Footer";
+        }
+    });
 });
