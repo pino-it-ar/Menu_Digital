@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Digital</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menú Digital</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Icons CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <!-- CSS Personalizado -->
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
 
 <body>
     <main class="container py-4">
@@ -122,32 +124,39 @@
             <footer class="text-center py-4 bg-primary text-white rounded-bottom mt-4 footer">
                 <div class="container">
                     <!-- Redes sociales -->
-                    <div class="mb-3 d-flex justify-content-center gap-4 flex-wrap">
-                        <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="text-white d-flex align-items-center gap-1 text-decoration-none">
-                            <span>Facebook</span>
-                            <svg width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"></path></svg>
+                    <div class="mb-3 d-flex justify-content-center gap-4 flex-wrap footer_redes">
+                        <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="text-white">
+                            <i class="bi bi-facebook fs-3"></i>
                         </a>
-                        <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="text-white d-flex align-items-center gap-1 text-decoration-none">
-                            <span>Instagram</span>
-                            <svg width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.782 2.225 7.148 2.163 8.414 2.105 8.794 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.363 3.678 1.344c-.98.98-1.213 2.092-1.272 3.373C2.013 5.668 2 6.077 2 9.333v5.334c0 3.256.013 3.665.072 4.946.059 1.281.292 2.393 1.272 3.373.981.981 2.093 1.213 3.374 1.272 1.28.059 1.689.072 4.946.072s3.665-.013 4.946-.072c1.281-.059 2.393-.292 3.374-1.272.98-.98 1.213-2.092 1.272-3.373.059-1.281.072-1.69.072-4.946V9.333c0-3.256-.013-3.665-.072-4.946-.059-1.281-.292-2.393-1.272-3.373-.981-.981-2.093-1.213-3.374-1.272C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"></path></svg>
+                        <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="text-white">
+                            <i class="bi bi-instagram fs-3"></i>
                         </a>
-                        <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp" class="text-white d-flex align-items-center gap-1 text-decoration-none">
-                            <span>WhatsApp</span>
-                            <svg width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163A11.945 11.945 0 0 1 0 11.945C0 5.355 5.373 0 12 0c3.181 0 6.167 1.24 8.413 3.488A11.822 11.822 0 0 1 24 12c0 6.627-5.373 12-12 12a11.95 11.95 0 0 1-5.646-1.357L.057 24zm6.597-3.807c1.735.995 3.276 1.591 5.346 1.591 5.448 0 9.877-4.429 9.877-9.877 0-2.638-1.027-5.112-2.896-6.988A9.825 9.825 0 0 0 12 2.119c-5.448 0-9.877 4.429-9.877 9.877 0 2.086.636 4.021 1.729 5.658l-.999 3.648 3.801-.986zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.366.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+                        <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp" class="text-white">
+                            <i class="bi bi-whatsapp fs-3"></i>
+                        </a>
+                        <a href="https://mi-restaurante.com" target="_blank" aria-label="Sitio web" class="text-white">
+                            <i class="bi bi-globe fs-3"></i>
                         </a>
                     </div>
-                    <!-- Mapa de ubicación -->
+                    <!-- Mapa con la ubicacion -->
                     <div class="mb-3">
-                        <iframe title="Ubicación del restaurante" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3471.631235174902!2d-56.853617099999994!3d-37.1137296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959c9d28bc630293%3A0xdfb11b35bdc26152!2sCasa%20Oxalis!5e1!3m2!1ses!2sar!4v1756141076331!5m2!1ses!2sar" style="border:0; width:100%; max-width:350px; height:150px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe
+                            title="Ubicación del restaurante"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27773.050264096655!2d-56.868042369840055!3d-37.11372855660769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959c9d28bc630293%3A0xdfb11b35bdc26152!2sCasa%20Oxalis!5e1!3m2!1ses!2sar!4v1756149867603!5m2!1ses!2sar"
+                            style="border:0; width:100%; max-width:350px; height:150px;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
-                    <!-- Logos y derechos de autor -->
-                    <div class="mb-2 d-flex justify-content-center align-items-center gap-3 flex-wrap">
-                        <!-- Logo del cliente -->
-                        <img src="/assets/img/Logo 3 JPG.jpg" alt="Logo Restaurante" class="footer-logo" style="height:40px;">
-                        <!-- Logo del desarrollador -->
-                        <img src="/assets/img/dev-logo.png" alt="Logo Desarrollador" class="footer-logo" style="height:32px;">
+                    <!-- Logo y derechos de autor -->
+                    <div class="d-flex flex-column align-items-center mb-2">
+                        <div class="d-flex justify-content-center align-items-center gap-2">
+                            <img src="/assets/img/Logo 3 JPG.jpg" alt="Logo de Pino IT" class="footer-logo" style="height:48px;">
+                            <span class="fw-semibold text-white">Desarrollado por Pino IT</span>
+                        </div>
+                        <p class="mb-0 small mt-2">© 2025 Menu_Digital. Todos los derechos reservados.</p>
                     </div>
-                    <p class="mb-0 small">© 2023 Mi Restaurante. Todos los derechos reservados.</p>
                 </div>
             </footer>
         
