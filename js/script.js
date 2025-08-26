@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     /**
-     * @type {NodeListOf<Element>} tabs - Nodelist de todos los elementos con la clase 'nav-link' dentro del elemento con el ID 'menuTabs'.
+     * NodeList de todos los elementos con la clase 'nav-link' dentro del elemento con el ID 'menuTabs'.
      * Representa los enlaces de navegación de las pestañas en el menú.
+     * @type {NodeListOf<Element>}
      */
     const tabs = document.querySelectorAll("#menuTabs .nav-link");
     /**
