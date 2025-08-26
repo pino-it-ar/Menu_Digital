@@ -1,9 +1,7 @@
-/* ==================================== */
-/* Estilos Globales y de Contenedores */
-/* ==================================== */
-
-/* Estilo para el cuerpo de la página */
-body {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0; {
     background: #f8f8f8; /* Color de fondo general, suave y neutro */
 }
 
@@ -13,40 +11,53 @@ main {
 
 /* Estilo para la tarjeta principal del menú */
 .menu-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
+    max-width: 26.25rem;  /* 420px */
+    display: flex;
+    flex-direction: column;
     position: relative; /* Clave para posicionar el footer de forma absoluta dentro de la tarjeta */
     overflow: hidden; /* Oculta cualquier contenido que se desborde, como el footer al deslizarse */
-    background: #fff; /* Fondo blanco para la tarjeta */
-    border-radius: 16px; /* Bordes redondeados para un diseño moderno */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, .1); /* Sombra sutil para dar profundidad */
-    max-width: 425px; /* Ancho máximo para mantener el diseño en móviles */
     min-height: calc(100vh - 45px); /* Altura mínima para ocupar casi toda la pantalla */
+}
+
+.tab-content {
+    max-height: 31.25rem;  /* límite en el área de productos */
+    overflow-y: auto;      /* scroll solo aca */
+    padding-right: 0.5rem; /* evita que el scroll tape texto */
 }
 
 /* ==================================== */
 /* Estilos de los Componentes del Menú */
 /* ==================================== */
 
-/* Estilos para las miniaturas de las imágenes del menú */
 .thumb {
-    width: 70px;
-    height: 70px;
-    border-radius: 10px;
-    object-fit: cover; /* Asegura que la imagen no se deforme */
+    width: 4.375rem;         /* ancho fijo para imágenes */
+    height: 4.375rem;        /* alto fijo */
+    border-radius: 0.625rem; /* bordes redondeados */
+    object-fit: cover;       /* recorta sin deformar */
+    object-position: center; /* centra la parte importante */
+    flex-shrink: 0;          /* evita que se achique con flex */
 }
-
-/* Estilo para cada fila de ítem del menú */
+  
 .menu-item {
-    border-bottom: 1px solid #eee; /* Línea separadora para cada ítem */
-    padding: 12px 0; /* Espaciado interno vertical */
-}
+  border-bottom: 0.0625rem solid #eee;
+  padding: 0.75rem 0;
 
 /* Estilo para el logo en la parte superior del menú */
 .menu-logo {
-    width: 120px;
+    width: 7.5rem;/* 120px */
     height: auto;
     opacity: 0.9;
 }
-
+  
+.products-scroll .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-align: start; /* cada producto "encaja" al hacer scroll */
+  
 /* ==================================== */
 /* Estilos del Footer y su Animación */
 /* ==================================== */
