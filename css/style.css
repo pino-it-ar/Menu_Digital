@@ -7,6 +7,10 @@ body {
     background: #f8f8f8; /* Color de fondo general, suave y neutro */
 }
 
+main {
+    min-height: 100vh;
+}
+
 /* Estilo para la tarjeta principal del menú */
 .menu-card {
     position: relative; /* Clave para posicionar el footer de forma absoluta dentro de la tarjeta */
@@ -14,7 +18,8 @@ body {
     background: #fff; /* Fondo blanco para la tarjeta */
     border-radius: 16px; /* Bordes redondeados para un diseño moderno */
     box-shadow: 0 4px 20px rgba(0, 0, 0, .1); /* Sombra sutil para dar profundidad */
-    max-width: 420px; /* Ancho máximo para mantener el diseño en móviles */
+    max-width: 425px; /* Ancho máximo para mantener el diseño en móviles */
+    min-height: calc(100vh - 45px); /* Altura mínima para ocupar casi toda la pantalla */
 }
 
 /* ==================================== */
@@ -75,8 +80,10 @@ footer.show {
     font-size: 1.5rem; /* Tamaño de fuente para los íconos */
 }
 
-/* Estilos para el contenedor del mapa */
+/* Estilos para el contenedor del mapa responsive */
 .mapa {
+    position: relative;
+    overflow: hidden;
     margin: 0 auto;
     border: 0;
     width: 100%;
