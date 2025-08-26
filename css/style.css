@@ -86,9 +86,17 @@ footer.show {
     overflow: hidden;
     margin: 0 auto;
     border: 0;
-    width: 100%;
-    max-width: 350px;
-    height: 150px;
+    /*Responsive*/
+    @media (max-width: 768px) {
+        .mapa {
+            height: 200px;
+        }
+    }
+
+    .mapa img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 /* Estilo para el botón que activa/desactiva el footer */
