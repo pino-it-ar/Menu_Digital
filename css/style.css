@@ -1,28 +1,113 @@
+/* ==================================== */
+/* Estilos Globales y de Contenedores */
+/* ==================================== */
+
+/* Estilo para el cuerpo de la página */
 body {
-    background: #f8f8f8;
+    background: #f8f8f8; /* Color de fondo general, suave y neutro */
 }
 
+main {
+    min-height: 100vh;
+}
+
+/* Estilo para la tarjeta principal del menú */
 .menu-card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
-    max-width: 420px;
+    position: relative; /* Clave para posicionar el footer de forma absoluta dentro de la tarjeta */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde, como el footer al deslizarse */
+    background: #fff; /* Fondo blanco para la tarjeta */
+    border-radius: 16px; /* Bordes redondeados para un diseño moderno */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .1); /* Sombra sutil para dar profundidad */
+    max-width: 425px; /* Ancho máximo para mantener el diseño en móviles */
+    min-height: calc(100vh - 45px); /* Altura mínima para ocupar casi toda la pantalla */
 }
 
+/* ==================================== */
+/* Estilos de los Componentes del Menú */
+/* ==================================== */
+
+/* Estilos para las miniaturas de las imágenes del menú */
 .thumb {
     width: 70px;
     height: 70px;
     border-radius: 10px;
-    object-fit: cover;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
 }
 
+/* Estilo para cada fila de ítem del menú */
 .menu-item {
-    border-bottom: 1px solid #eee;
-    padding: 12px 0;
+    border-bottom: 1px solid #eee; /* Línea separadora para cada ítem */
+    padding: 12px 0; /* Espaciado interno vertical */
 }
 
+/* Estilo para el logo en la parte superior del menú */
 .menu-logo {
     width: 120px;
     height: auto;
     opacity: 0.9;
+}
+
+/* ==================================== */
+/* Estilos del Footer y su Animación */
+/* ==================================== */
+
+/* Estilos base para el footer */
+footer {
+    /* Posicionamiento para que se deslice dentro de la tarjeta */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Lo coloca por encima del contenido principal */
+    
+    /* Propiedades de la animación de deslizamiento */
+    transform: translateY(calc(100% - 24px)); /* Oculta el footer excepto la "lengüeta" de 24px */
+    transition: transform 0.5s ease-in-out; /* Define una transición suave */
+    
+    /* Ajustes de diseño de la forma */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* Estado activo del footer, visible al 100% */
+footer.show {
+    transform: translateY(0); /* Desliza el footer para que sea completamente visible */
+}
+
+/* Estilos para los íconos de redes sociales */
+.footer_redes {
+    /* Clases de Bootstrap como 'd-flex' y 'justify-content-center' manejan la alineación */
+    font-size: 1.5rem; /* Tamaño de fuente para los íconos */
+}
+
+/* Estilos para el contenedor del mapa responsive */
+.mapa {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 0;
+    width: 100%;
+    max-width: 350px;
+    height: 150px;
+}
+
+/* Estilo para el botón que activa/desactiva el footer */
+#toggleFooterBtn {
+    /* Posicionamiento y forma del "asa" para tirar del footer */
+    position: absolute;
+    top: -10px; /* Eleva el botón para que se vea por encima del footer */
+    left: 50%;
+    transform: translateX(-50%); /* Centra el botón horizontalmente */
+    
+    /* Diseño y accesibilidad */
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 50%; /* Lo hace circular */
+    width: 80px;
+    height: 35px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
