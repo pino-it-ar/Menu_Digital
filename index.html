@@ -9,53 +9,67 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Hoja de estilos personalizada -->
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 
 <body>
     <main class="container py-4">
         <section class="menu-card mx-auto p-4">
             <header>
-                <div class="text-center mb-4">
-                    <img src="/assets/img/Logo 3 JPG.jpg" alt="Restaurant Logo" class="menu-logo-large">
+                <div class="text-center mb-2">
+                    <img src="/assets/img/Logo PNG.png" alt="Restaurant Logo" class="menu-logo-large">
                 </div>
             </header>
 
             <!-- Pestañas de navegación del menú -->
 
-            <nav>
-                <ul class="nav nav-tabs justify-content-between icon-tabs" id="menuTabs" role="tablist">
+            <nav class="nav-scroll-wrapper">
+                <ul class="nav nav-tabs flex-nowrap icon-tabs" id="menuTabs" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="sugerencias-tab" data-bs-toggle="tab"
                             data-bs-target="#sugerencias" type="button" role="tab" aria-controls="sugerencias"
                             aria-selected="true">
-                            <div class="tab-icon"><img src="/assets/icons/sugerencias.png" alt="Sugerencias"></div>
+                            <div class="tab-icon"><i class="bi bi-star"></i></div>
                             <span>Sugerencias</span>
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="cafeteria-tab" data-bs-toggle="tab" data-bs-target="#cafeteria"
                             type="button" role="tab" aria-controls="cafeteria" aria-selected="false">
-                            <div class="tab-icon"><img src="/assets/icons/cafe.png" alt="Cafetería"></div>
+                            <div class="tab-icon"><i class="bi bi-cup-hot"></i></div>
                             <span>Cafetería</span>
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="dulces-tab" data-bs-toggle="tab" data-bs-target="#dulces"
                             type="button" role="tab" aria-controls="dulces" aria-selected="false">
-                            <div class="tab-icon"><img src="/assets/icons/dulces.png" alt="Dulces"></div>
+                            <div class="tab-icon"><i class="bi bi-cake"></i></div>
                             <span>Dulces</span>
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="bebidas-tab" data-bs-toggle="tab" data-bs-target="#bebidas"
                             type="button" role="tab" aria-controls="bebidas" aria-selected="false">
-                            <div class="tab-icon"><img src="/assets/icons/bebidas.png" alt="Bebidas"></div>
+                            <div class="tab-icon"><i class="bi bi-cup-straw"></i></div>
                             <span>Bebidas</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="salados-tab" data-bs-toggle="tab" data-bs-target="#salados"
+                            type="button" role="tab" aria-controls="salados" aria-selected="false">
+                            <div class="tab-icon"><i class="bi bi-basket"></i></div>
+                            <span>Salados</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="alcohol-tab" data-bs-toggle="tab" data-bs-target="#alcohol"
+                            type="button" role="tab" aria-controls="alcohol" aria-selected="false">
+                            <div class="tab-icon"><i class="bi bi-egg-fried"></i></div>
+                            <span>Alcohol</span>
                         </button>
                     </li>
                 </ul>
             </nav>
-
 
             <!-- Secciones del menú (contenido de cada pestaña) -->
             <div class="tab-content">
@@ -128,7 +142,7 @@
 
             <!-- LOGO del restaurante -->
             <div class="text-center mt-5">
-                <img src="/assets/img/Logo 3 JPG.jpg" alt="Restaurant Logo" class="menu-logo">
+                <img src="/assets/img/Logo PNG.png" alt="Restaurant Logo" class="menu-logo">
             </div>
         </section>
     </main>

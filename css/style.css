@@ -49,20 +49,51 @@ body {
 }
 
 .tab-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
+    width: 25px;
+    height: 25px;
     overflow: hidden;
-    margin-bottom: 4px;
-    background-color: #eee;
+    margin-bottom: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.tab-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+.tab-icon i {
+    font-size: 22px;
+}
+
+.nav-tabs .nav-link {
+    color: #000;
+    /* color normal */
+}
+
+.nav-tabs .nav-link.active {
+    font-weight: bold;
+    /* color cuando está activa */
+}
+
+.nav-scroll-wrapper {
+    overflow-x: auto;
+    /* solo scroll horizontal */
+    overflow-y: hidden;
+    /* oculta scroll vertical */
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    /* evita saltos de línea */
+}
+
+.nav-scroll-wrapper::-webkit-scrollbar {
+    height: 6px;
+    /* tamaño de la barra */
+}
+
+.nav-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #ccc;
+    /* color del scroll */
+    border-radius: 3px;
+}
+
+#menuTabs {
+    flex-wrap: nowrap;
+    /* evita que las categorías bajen de línea */
 }
