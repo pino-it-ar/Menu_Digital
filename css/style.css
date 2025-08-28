@@ -14,7 +14,7 @@ header {
     border-radius: 1rem 1rem 0 0;
     box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
     max-width: 26.25rem; /* 420px */
-    height: 30vh;
+    min-height: 30vh;
     display: flex;
     flex-direction: column; /* Apila los elementos verticalmente */
     align-items: center; /* Centra horizontalmente */
@@ -27,8 +27,9 @@ header {
 
 header img {
     border-radius: 1rem;
-    max-height: 35%; /* Ajusta el tamaño del logo */
+    max-height: 70px; /* Ajusta el tamaño del logo */
     margin-bottom: 0.5rem; /* Espacio entre el logo y el nombre */
+    object-fit: contain; /* Ajusta la imagen al contenedor */
 }
 
 header h1 {
