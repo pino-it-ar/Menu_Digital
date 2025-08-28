@@ -9,10 +9,41 @@ main {
     min-height: 100vh; /* Asegura que main ocupe al menos la altura de la pantalla */
 }
 
+header {
+    /* Estilos para el encabezado */
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
+    max-width: 26.25rem; /* 420px */
+    height: 30vh;
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    position: relative; /* Para posicionar el footer */
+    overflow: hidden; /* Oculta desbordamientos */  
+    padding: 1rem; /* Agrega un espacio alrededor del contenido */
+    text-align: center; /* Asegura que el texto también esté centrado */
+}
+
+header img {
+    border-radius: 1rem;
+    max-height: 40%; /* Ajusta el tamaño del logo */
+    margin-bottom: 0.5rem; /* Espacio entre el logo y el nombre */
+}
+
+header h1 {
+    font-size: 1.5rem; /* Ajusta el tamaño del nombre */
+    margin-bottom: 0.25rem; /* Espacio entre el nombre y el texto de Pino IT */
+}
+
+header small {
+    font-size: 0.8rem; /* Ajusta el tamaño del texto de Pino IT */
+}
+
 /* Tarjeta principal del menú */
 .menu-card {
     background: #fff;
-    border-radius: 1rem;
+    border-radius: 0 0 1rem 1rem;
     box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
     max-width: 26.25rem; /* 420px */
     display: flex;
