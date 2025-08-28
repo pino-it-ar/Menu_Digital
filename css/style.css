@@ -50,6 +50,72 @@ main {
     height: auto;
     opacity: 0.9;
 }
+
+
+.icon-tabs .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    background: transparent;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    padding: 10px;
+}
+
+.icon-tabs .nav-link.active {
+    transform: scale(1.1);
+    filter: saturate(1.5);
+}
+
+.tab-icon {
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-icon i {
+    font-size: 22px;
+}
+
+.nav-tabs .nav-link {
+    color: #000;
+    /* color normal */
+}
+
+.nav-tabs .nav-link.active {
+    font-weight: bold;
+    /* color cuando está activa */
+}
+
+.nav-scroll-wrapper {
+    overflow-x: auto;
+    /* solo scroll horizontal */
+    overflow-y: hidden;
+    /* oculta scroll vertical */
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    /* evita saltos de línea */
+}
+
+.nav-scroll-wrapper::-webkit-scrollbar {
+    height: 6px;
+    /* tamaño de la barra */
+}
+
+.nav-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #ccc;
+    /* color del scroll */
+    border-radius: 3px;
+}
+
+#menuTabs {
+    flex-wrap: nowrap;
+    /* evita que las categorías bajen de línea */
+}
   
 /* Estilos para el scroll de productos */
 .products-scroll .menu-item {

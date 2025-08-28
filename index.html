@@ -16,23 +16,55 @@
     <main class="container py-2 mt-0">
         <section class="menu-card mx-auto p-4 pb-0">
             <header>
-                <h1 class="text-center fw-bold mb-4">MENÚ DIGITAL</h1>
+              <h1>Menu Digital</h1>
             </header>
 
             <!-- Pestañas de navegación del menú -->
-            <nav>
-                <ul class="nav nav-tabs justify-content-center mb-3" id="menuTabs" role="tablist">
+
+            <nav class="nav-scroll-wrapper">
+                <ul class="nav nav-tabs flex-nowrap icon-tabs" id="menuTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="sugerencias-tab" data-bs-toggle="tab" data-bs-target="#sugerencias" type="button" role="tab" aria-controls="sugerencias" aria-selected="true">Sugerencias</button>
+                        <button class="nav-link active" id="sugerencias-tab" data-bs-toggle="tab"
+                            data-bs-target="#sugerencias" type="button" role="tab" aria-controls="sugerencias"
+                            aria-selected="true">
+                            <div class="tab-icon"><i class="bi bi-star"></i></div>
+                            <span>Sugerencias</span>
+                        </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="cafeteria-tab" data-bs-toggle="tab" data-bs-target="#cafeteria" type="button" role="tab" aria-controls="cafeteria" aria-selected="false">Cafetería</button>
+                        <button class="nav-link" id="cafeteria-tab" data-bs-toggle="tab" data-bs-target="#cafeteria"
+                            type="button" role="tab" aria-controls="cafeteria" aria-selected="false">
+                            <div class="tab-icon"><i class="bi bi-cup-hot"></i></div>
+                            <span>Cafetería</span>
+                        </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="dulces-tab" data-bs-toggle="tab" data-bs-target="#dulces" type="button" role="tab" aria-controls="dulces" aria-selected="false">Dulces</button>
+                        <button class="nav-link" id="dulces-tab" data-bs-toggle="tab" data-bs-target="#dulces"
+                            type="button" role="tab" aria-controls="dulces" aria-selected="false">
+                            <div class="tab-icon"><i class="bi bi-cake"></i></div>
+                            <span>Dulces</span>
+                        </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="bebidas-tab" data-bs-toggle="tab" data-bs-target="#bebidas" type="button" role="tab" aria-controls="bebidas" aria-selected="false">Bebidas</button>
+                        <button class="nav-link" id="bebidas-tab" data-bs-toggle="tab" data-bs-target="#bebidas"
+                            type="button" role="tab" aria-controls="bebidas" aria-selected="false">
+                            <div class="tab-icon"><i class="bi bi-cup-straw"></i></div>
+                            <span>Bebidas</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="salados-tab" data-bs-toggle="tab" data-bs-target="#salados"
+                            type="button" role="tab" aria-controls="salados" aria-selected="false">
+                            <div class="tab-icon"><i class="bi bi-basket"></i></div>
+                            <span>Salados</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="alcohol-tab" data-bs-toggle="tab" data-bs-target="#alcohol"
+                            type="button" role="tab" aria-controls="alcohol" aria-selected="false">
+                            <div class="tab-icon"><i class="bi bi-egg-fried"></i></div>
+                            <span>Alcohol</span>
+                        </button>
                     </li>
                 </ul>
             </nav>
@@ -41,8 +73,9 @@
             <!-- Secciones del menú (contenido de cada pestaña) -->
             <div class="tab-content">
                 <!-- Sugerencias -->
-                <section id="sugerencias" class="tab-pane fade show active" role="tabpanel" aria-labelledby="sugerencias-tab">
-                    <h2 class="fw-bold mb-3 fs-5">SUGERENCIAS</h2>
+                <section id="sugerencias" class="tab-pane fade show active" role="tabpanel"
+                    aria-labelledby="sugerencias-tab">
+                    <h2 class="fw-bold mb-3 mt-3 fs-5">SUGERENCIAS</h2>
                     <article class="menu-item d-flex align-items-center">
                         <img src="https://lovefoodfeed.com/wp-content/uploads/2023/09/Pesto-ciabatta-bruschetta-1200-07.jpg"
                             class="thumb me-3" alt="Bruschetta">
@@ -119,7 +152,7 @@
  
                 <!-- Cafetería -->
                 <section id="cafeteria" class="tab-pane fade" role="tabpanel" aria-labelledby="cafeteria-tab">
-                    <h2 class="fw-bold mb-3 fs-5">CAFETERÍA</h2>
+                    <h2 class="fw-bold mb-3 mt-3 fs-5">CAFETERÍA</h2>
                     <article class="menu-item d-flex align-items-center">
                         <img src="https://www.marketresearchintellect.com/images/blogs/sipping-success-exploring-the-dynamics-of-the-espresso-coffee-market.webp"
                             class="thumb me-3" alt="Espresso">
@@ -173,7 +206,7 @@
 
                 <!-- Dulces -->
                 <section id="dulces" class="tab-pane fade" role="tabpanel" aria-labelledby="dulces-tab">
-                    <h2 class="fw-bold mb-3 fs-5">DULCES</h2>
+                    <h2 class="fw-bold mb-3 mt-3 fs-5">DULCES</h2>
                     <article class="menu-item d-flex align-items-center">
                         <img src="https://www.paulinacocina.net/wp-content/uploads/2020/01/receta-de-tiramisu-facil-y-economico-1740483918.jpg"
                             class="thumb me-3" alt="Tiramisú">
@@ -241,7 +274,7 @@
 
                 <!-- Bebidas -->
                 <section id="bebidas" class="tab-pane fade" role="tabpanel" aria-labelledby="bebidas-tab">
-                    <h2 class="fw-bold mb-3 fs-5">BEBIDAS</h2>
+                    <h2 class="fw-bold mb-3 mt-3 fs-5">BEBIDAS</h2>
                     <article class="menu-item d-flex align-items-center">
                         <img src="https://blenderartists.org/uploads/default/original/4X/0/8/9/089cd2efdf004cc94981716464f82da8d2a44645.jpeg"
                             class="thumb me-3" alt="Gaseosa">
@@ -270,7 +303,7 @@
                 referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
-
+          
             <!-- Llamada a la acción para abrir el footer -->
             <div class="text-center mb-5">
                 <small class="text-muted">
