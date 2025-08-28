@@ -27,7 +27,7 @@ header {
 
 header img {
     border-radius: 1rem;
-    max-height: 40%; /* Ajusta el tamaño del logo */
+    max-height: 35%; /* Ajusta el tamaño del logo */
     margin-bottom: 0.5rem; /* Espacio entre el logo y el nombre */
 }
 
