@@ -22,12 +22,42 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector(tab.dataset.bsTarget).classList.remove("d-none");
         });
     });
+    
+    /* Modal */
+    const products = document.querySelectorAll(".menu-item");
 
-    /**
-     * Botón para alternar la visibilidad del footer.
-     * @type {HTMLElement}
-     */
-    const toggleFooterBtn = document.getElementById("toggleFooterBtn");
+    // Referencias al modal
+    const productModal = new bootstrap.Modal(document.getElementById("productModal"));
+    const modalTitle = document.getElementById("productModalLabel");
+    const modalImg = document.getElementById("productModalImg");
+    const modalDesc = document.getElementById("productModalDesc");
+    const modalPrice = document.getElementById("productModalPrice");
+
+    // Evento para cada producto
+    products.forEach(product => {
+      product.addEventListener("click", () => {
+        // Obtener datos del producto
+        const name = product.dataset.name;
+        const img = product.dataset.img;
+        const desc = product.dataset.desc;
+        const price = product.dataset.price;
+
+        // Cargar datos en el modal
+        modalTitle.textContent = name;
+        modalImg.src = img;
+        modalDesc.textContent = desc;
+        modalPrice.textContent = price;
+
+        // Mostrar modal
+        productModal.show();
+      });
+    });
+
+  /**
+   * Botón para alternar la visibilidad del footer.
+   * @type {HTMLElement}
+   */
+  const toggleFooterBtn = document.getElementById("toggleFooterBtn");
     /**
      * Elemento footer.
      * @type {HTMLElement}
@@ -42,38 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             toggleFooterBtn.classList.replace("bi-caret-down-fill", "bi-caret-up-fill");
         }
+
+
     });
-});
-
-/* Modal */
-document.addEventListener("DOMContentLoaded", () => {
-  // Selecciona todos los productos
-  const products = document.querySelectorAll(".menu-item");
-
-  // Referencias al modal
-  const productModal = new bootstrap.Modal(document.getElementById("productModal"));
-  const modalTitle = document.getElementById("productModalLabel");
-  const modalImg = document.getElementById("productModalImg");
-  const modalDesc = document.getElementById("productModalDesc");
-  const modalPrice = document.getElementById("productModalPrice");
-
-  // Evento para cada producto
-  products.forEach(product => {
-    product.addEventListener("click", () => {
-      // Obtener datos del producto
-      const name = product.dataset.name;
-      const img = product.dataset.img;
-      const desc = product.dataset.desc;
-      const price = product.dataset.price;
-
-      // Cargar datos en el modal
-      modalTitle.textContent = name;
-      modalImg.src = img;
-      modalDesc.textContent = desc;
-      modalPrice.textContent = price;
-
-      // Mostrar modal
-      productModal.show();
-    });
-  });
 });
