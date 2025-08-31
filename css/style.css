@@ -42,6 +42,15 @@ header small {
 }
 
 /* Tarjeta principal del menú */
+
+.menu-scroll-container {
+    position: relative;
+    
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding-right: 0.5rem; /* Evita que el scroll tape el texto */
+}
+
 .menu-card {
     background: #fff;
     border-radius: 0 0 1rem 1rem;
@@ -54,12 +63,16 @@ header small {
     min-height: calc(100vh - 45px); /* Altura mínima */
 }
 
+
 /* Contenido de las pestañas */
 .tab-content {
-    max-height: 31.25rem; /* Altura máxima */
+    position: relative;
+    max-height: 20rem; /* Ajusta esta altura para que 3.5 productos sean visibles */
     overflow-y: auto; /* Scroll vertical */
     padding-right: 0.5rem; /* Evita que el scroll tape el texto */
+    -webkit-overflow-scrolling: touch; /* Scroll fluido en iOS */
 }
+
 
 /* Componentes del Menú */
 .thumb {
@@ -74,6 +87,7 @@ header small {
 .menu-item {
   border-bottom: 0.0625rem solid #eee;
   padding: 0.75rem 0;
+  display: flex; /* Mantenemos flex para alinear el contenido */
 }
 
 /* Logo del menú */
