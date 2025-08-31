@@ -44,3 +44,36 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+/* Modal */
+document.addEventListener("DOMContentLoaded", () => {
+  // Selecciona todos los productos
+  const products = document.querySelectorAll(".menu-item");
+
+  // Referencias al modal
+  const productModal = new bootstrap.Modal(document.getElementById("productModal"));
+  const modalTitle = document.getElementById("productModalLabel");
+  const modalImg = document.getElementById("productModalImg");
+  const modalDesc = document.getElementById("productModalDesc");
+  const modalPrice = document.getElementById("productModalPrice");
+
+  // Evento para cada producto
+  products.forEach(product => {
+    product.addEventListener("click", () => {
+      // Obtener datos del producto
+      const name = product.dataset.name;
+      const img = product.dataset.img;
+      const desc = product.dataset.desc;
+      const price = product.dataset.price;
+
+      // Cargar datos en el modal
+      modalTitle.textContent = name;
+      modalImg.src = img;
+      modalDesc.textContent = desc;
+      modalPrice.textContent = price;
+
+      // Mostrar modal
+      productModal.show();
+    });
+  });
+});
