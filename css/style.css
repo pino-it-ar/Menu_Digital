@@ -1,12 +1,15 @@
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: #f8f8f8; /* Fondo general suave */
+    background: #f8f8f8;
+    /* Fondo general suave */
 }
 
 main {
-    min-height: 100vh; /* Asegura que main ocupe al menos la altura de la pantalla */
+    min-height: 100vh;
+    /* Asegura que main ocupe al menos la altura de la pantalla */
 }
 
 header {
@@ -46,19 +49,26 @@ header small {
     background: #fff;
     border-radius: 0 0 1rem 1rem;
     box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
-    max-width: 26.25rem; /* 420px */
+    max-width: 26.25rem;
+    /* 420px */
     display: flex;
     flex-direction: column;
-    position: relative; /* Para posicionar el footer */
-    overflow: hidden; /* Oculta desbordamientos */
-    min-height: calc(100vh - 45px); /* Altura mínima */
+    position: relative;
+    /* Para posicionar el footer */
+    overflow: hidden;
+    /* Oculta desbordamientos */
+    min-height: calc(100vh - 45px);
+    /* Altura mínima */
 }
 
 /* Contenido de las pestañas */
 .tab-content {
-    max-height: 31.25rem; /* Altura máxima */
-    overflow-y: auto; /* Scroll vertical */
-    padding-right: 0.5rem; /* Evita que el scroll tape el texto */
+    max-height: 31.25rem;
+    /* Altura máxima */
+    overflow-y: auto;
+    /* Scroll vertical */
+    padding-right: 0.5rem;
+    /* Evita que el scroll tape el texto */
 }
 
 /* Componentes del Menú */
@@ -66,19 +76,22 @@ header small {
     width: 4.375rem;
     height: 4.375rem;
     border-radius: 0.625rem;
-    object-fit: cover; /* Ajusta la imagen */
+    object-fit: cover;
+    /* Ajusta la imagen */
     object-position: center;
-    flex-shrink: 0; /* Evita que se encoja */
+    flex-shrink: 0;
+    /* Evita que se encoja */
 }
-  
+
 .menu-item {
-  border-bottom: 0.0625rem solid #eee;
-  padding: 0.75rem 0;
+    border-bottom: 0.0625rem solid #eee;
+    padding: 0.75rem 0;
 }
 
 /* Logo del menú */
 .menu-logo {
-    width: 7.5rem; /* 120px */
+    width: 7.5rem;
+    /* 120px */
     height: auto;
     opacity: 0.9;
 }
@@ -100,13 +113,25 @@ header small {
 }
 
 .tab-icon {
-    width: 25px;
-    height: 25px;
-    overflow: hidden;
-    margin-bottom: 2px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    /* Color del marco */
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #fff;
+    /* Fondo opcional */
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-tabs .nav-link.active .tab-icon {
+    border-color: #0d6efd;
+    /* Azul vibrante */
+    transform: scale(1.1);
+    /* Sutil agrandamiento */
+    box-shadow: 0 0 8px rgba(13, 110, 253, 0.4);
 }
 
 .tab-icon i {
@@ -120,6 +145,7 @@ header small {
 
 .nav-tabs .nav-link.active {
     font-weight: bold;
+    color: #0d6efd;
     /* color cuando está activa */
 }
 
@@ -148,13 +174,14 @@ header small {
     flex-wrap: nowrap;
     /* evita que las categorías bajen de línea */
 }
-  
+
 /* Estilos para el scroll de productos */
 .products-scroll .menu-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    scroll-snap-align: start; /* Efecto "snap" al hacer scroll */
+    scroll-snap-align: start;
+    /* Efecto "snap" al hacer scroll */
 }
 
 /* Footer y su Animación */
@@ -163,16 +190,20 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 100; /* Encima del contenido */
-    transform: translateY(calc(100% - 24px)); /* Oculto por defecto */
-    transition: transform 0.5s ease-in-out; /* Animación suave */
+    z-index: 100;
+    /* Encima del contenido */
+    transform: translateY(calc(100% - 24px));
+    /* Oculto por defecto */
+    transition: transform 0.5s ease-in-out;
+    /* Animación suave */
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
 
 /* Footer visible */
 footer.show {
-    transform: translateY(0); /* Desliza hacia arriba */
+    transform: translateY(0);
+    /* Desliza hacia arriba */
 }
 
 /* Íconos de redes sociales en el footer */
@@ -201,12 +232,15 @@ footer.show {
 /* Botón para mostrar/ocultar el footer */
 #toggleFooterBtn {
     position: absolute;
-    top: -10px; /* Encima del footer */
+    top: -10px;
+    /* Encima del footer */
     left: 50%;
-    transform: translateX(-50%); /* Centrado horizontalmente */
+    transform: translateX(-50%);
+    /* Centrado horizontalmente */
     background-color: #0d6efd;
     color: white;
-    border-radius: 50%; /* Circular */
+    border-radius: 50%;
+    /* Circular */
     width: 80px;
     height: 35px;
     font-size: 20px;
