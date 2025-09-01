@@ -170,6 +170,51 @@ header small {
     align-items: center;
     scroll-snap-align: start; /* Efecto "snap" al hacer scroll */
 }
+.modal-body {
+  max-height: 70vh; /* no ocupa toda la pantalla */
+  overflow-y: auto; /* scroll interno */
+}
+
+#productModal .carousel-inner img {
+    height: 16rem;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 0.75rem;
+}
+/* Modal estilos compactos */
+#productModal .modal-body {
+    font-size: .9rem; 
+    line-height: 1.3; 
+    padding: .75rem 1rem; 
+    max-height: 70vh; 
+    overflow-y: auto;
+}
+
+#productModal h6, #productModalDesc, #productModalIngredients, #productModalCalories, #productModalPrice {
+    font-size: .85rem;
+}
+#productModal h6 {
+    margin-bottom: .25rem; 
+    font-weight: 600; 
+    color: #444;
+}
+#productModalPrice {
+    font-size: 1rem; 
+    font-weight: 700; 
+    color: #000; 
+    margin-bottom: .5rem;
+}
+#productModalDesc, #productModalIngredients {
+    color: #666; 
+    margin-bottom: .5rem;
+}
+#productModalIngredients li {
+    margin-bottom: .2rem;
+}
+#productModalCalories {
+    font-size: .8rem; color: #555;
+}
+
 
 /* Footer y su Animación */
 footer {

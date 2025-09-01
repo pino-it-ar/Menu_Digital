@@ -26,17 +26,55 @@
 
         <!-- Modal -->
         <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 shadow rounded-3">
-                <div class="modal-body text-center p-3">
-                <!-- Imagen -->
-                <img id="productModalImg" src="" alt="" class="img-fluid rounded mb-3">
-                <!-- Título -->
-                <h5 id="productModalLabel" class="fw-bold mb-2"></h5>
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow rounded-4">
+
+                <!-- Cerrar -->
+                <div class="modal-header border-0">
+                <h5 id="productModalLabel" class="fw-bold mb-0"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body">
+
+                <!-- Carrusel -->
+                <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner rounded-3" id="productModalImgs">
+                    <!-- Las imágenes se insertan dinámicamente -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+                 <!-- Precio -->
+                <div class="mt-3">
+                    <h6 class="fw-bold">Precio</h6>
+                    <p id="productModalPrice" class="fw-bold text-dark"></p>
+                </div>
+    
                 <!-- Descripción -->
-                <p id="productModalDesc" class="text-muted small mb-3"></p>
-                <!-- Precio -->
-                <p id="productModalPrice" class="fw-bold fs-5 text-dark"></p>
+                <div class="mt-4">
+                    <h6 class="fw-bold">Descripción</h6>
+                    <p id="productModalDesc" class="text-muted small"></p>
+                </div>
+
+                <!-- Ingredientes -->
+                <div class="mt-3">
+                    <h6 class="fw-bold">Ingredientes</h6>
+                    <ul id="productModalIngredients" class="text-muted small"></ul>
+                </div>
+
+                <!-- Valor Calórico -->
+                <div class="mt-3">
+                    <h6 class="fw-bold">Valor calórico</h6>
+                    <p id="productModalCalories" class="text-muted small"></p>
+                </div>
+
+               
+
                 </div>
             </div>
             </div>
@@ -103,8 +141,10 @@
                     <article class="menu-item d-flex align-items-center"
                         data-name="Bruschetta"
                         data-img="https://lovefoodfeed.com/wp-content/uploads/2023/09/Pesto-ciabatta-bruschetta-1200-07.jpg"
+                        data-price="$3200"
                         data-desc="Deliciosa Bruschetta italiana con pan rústico, tomate fresco, ajo y albahaca."
-                        data-price="$3200">
+                        data-ingredients="Pan rústico, Tomate fresco, Ajo, Albahaca, Aceite de oliva"
+                        data-calories="210 kcal">
   
                         <img src="https://lovefoodfeed.com/wp-content/uploads/2023/09/Pesto-ciabatta-bruschetta-1200-07.jpg" class="thumb me-3" alt="Bruschetta">
                         <div class="flex-grow-1">
@@ -117,8 +157,10 @@
                     <article class="menu-item d-flex align-items-center"
                         data-name="Tostados de JyQ"
                         data-img="https://images.pexels.com/photos/15110223/pexels-photo-15110223.jpeg"
+                        data-price="$3500"
                         data-desc="Deliciosos tostados de jamón y queso con pan crujiente."
-                        data-price="$3500">
+                        data-ingredients="Pan de molde, Jamón cocido, Queso, Manteca"
+                        data-calories="320 kcal">
 
                         <img src="https://images.pexels.com/photos/15110223/pexels-photo-15110223.jpeg" class="thumb me-3" alt="Tostados de JyQ">
                         <div class="flex-grow-1">
@@ -131,8 +173,10 @@
                     <article class="menu-item d-flex align-items-center"
                         data-name="Baguette"
                         data-img="https://images.pexels.com/photos/31023834/pexels-photo-31023834.jpeg"
+                        data-price="$4000"
                         data-desc="Deliciosa Baguette con jamón, queso y vegetales frescos."
-                        data-price="$3200">
+                        data-ingredients="Pan rústico, Jamón crudo, Queso, Vegetales frescos, Aceite de oliva"
+                        data-calories="250 kcal">
 
                         <img src="https://images.pexels.com/photos/31023834/pexels-photo-31023834.jpeg" class="thumb me-3" alt="Baguette">
                         <div class="flex-grow-1">
@@ -145,8 +189,10 @@
                     <article class="menu-item d-flex align-items-center"
                         data-name="Pancakes Frutales"
                         data-img="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg"
+                        data-price="$3800"
                         data-desc="Deliciosos pancakes con frutas frescas y sirope de arce."
-                        data-price="$3200">
+                        data-ingredients="Harina, Huevos, Leche, Frutas frescas, Sirope de arce"
+                        data-calories="320 kcal">
 
                         <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg" class="thumb me-3" alt="Pancakes Frutales">
                         <div class="flex-grow-1">
@@ -159,8 +205,10 @@
                     <article class="menu-item d-flex align-items-center"
                         data-name="Ensalada Cesar"
                         data-img="https://ariztia.com/wp-content/uploads/2023/11/ensalada-cesar-de-pollo.jpg"
+                        data-price="$4000"
                         data-desc="Deliciosa Ensalada Cesar con pollo, lechuga y aderezo cremoso."
-                        data-price="$3200">
+                        data-ingredients="Pollo, Lechuga, Croutons, Queso parmesano, Aderezo Cesar"
+                        data-calories="320 kcal">
 
                         <img src="https://ariztia.com/wp-content/uploads/2023/11/ensalada-cesar-de-pollo.jpg" class="thumb me-3" alt="Ensalada Cesar">
                         <div class="flex-grow-1">

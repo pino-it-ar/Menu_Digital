@@ -22,34 +22,45 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector(tab.dataset.bsTarget).classList.remove("d-none");
         });
     });
-    
-    /* Modal */
-    const products = document.querySelectorAll(".menu-item");
+    // Modal de producto
+    const modal = new bootstrap.Modal(document.getElementById("productModal"));
+    const menuItems = document.querySelectorAll(".menu-item");
 
-    // Referencias al modal
-    const productModal = new bootstrap.Modal(document.getElementById("productModal"));
-    const modalTitle = document.getElementById("productModalLabel");
-    const modalImg = document.getElementById("productModalImg");
-    const modalDesc = document.getElementById("productModalDesc");
-    const modalPrice = document.getElementById("productModalPrice");
+    menuItems.forEach(item => {
+      item.addEventListener("click", () => {
+      const name = item.dataset.name || "Producto";
+      const desc = item.dataset.desc || "";
+      const price = item.dataset.price || "";
+      const imgs = item.dataset.imgs ? item.dataset.imgs.split(",") : [item.dataset.img];
+      const ingredients = item.dataset.ingredients ? item.dataset.ingredients.split(",") : [];
+      const calories = item.dataset.calories || "";
 
-    // Evento para cada producto
-    products.forEach(product => {
-      product.addEventListener("click", () => {
-        // Obtener datos del producto
-        const name = product.dataset.name;
-        const img = product.dataset.img;
-        const desc = product.dataset.desc;
-        const price = product.dataset.price;
+      // Rellenar modal
+      document.getElementById("productModalLabel").textContent = name;
+      document.getElementById("productModalDesc").textContent = desc;
+      document.getElementById("productModalPrice").textContent = price;
+      document.getElementById("productModalCalories").textContent = calories;
 
-        // Cargar datos en el modal
-        modalTitle.textContent = name;
-        modalImg.src = img;
-        modalDesc.textContent = desc;
-        modalPrice.textContent = price;
+      // Ingredientes
+      const ingList = document.getElementById("productModalIngredients");
+      ingList.innerHTML = "";
+      ingredients.forEach(ing => {
+        const li = document.createElement("li");
+        li.textContent = ing.trim();
+        ingList.appendChild(li);
+      });
 
-        // Mostrar modal
-        productModal.show();
+      // Carrusel
+      const carouselInner = document.getElementById("productModalImgs");
+      carouselInner.innerHTML = "";
+      imgs.forEach((src, i) => {
+        const div = document.createElement("div");
+        div.className = `carousel-item ${i === 0 ? "active" : ""}`;
+        div.innerHTML = `<img src="${src.trim()}" class="d-block w-100" alt="${name}">`;
+        carouselInner.appendChild(div);
+      });
+
+      modal.show();
       });
     });
 
