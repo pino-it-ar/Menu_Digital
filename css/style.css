@@ -175,12 +175,7 @@ header small {
   overflow-y: auto; /* scroll interno */
 }
 
-#productModal .carousel-inner img {
-    height: 16rem;
-    object-fit: cover;
-    width: 100%;
-    border-radius: 0.75rem;
-}
+
 /* Modal estilos compactos */
 #productModal .modal-body {
     font-size: .9rem; 
@@ -189,7 +184,12 @@ header small {
     max-height: 70vh; 
     overflow-y: auto;
 }
-
+#productModal img, #productModal .carousel-inner img {
+    max-height: 16rem; 
+    object-fit: cover; 
+    border-radius: .75rem; 
+    width: 100%;
+}
 #productModal h6, #productModalDesc, #productModalIngredients, #productModalCalories, #productModalPrice {
     font-size: .85rem;
 }
@@ -214,6 +214,7 @@ header small {
 #productModalCalories {
     font-size: .8rem; color: #555;
 }
+
 
 
 /* Footer y su Animación */
