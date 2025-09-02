@@ -13,62 +13,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
-            // Desactiva todas las pestañas y oculta todas las secciones
+            // reset
             tabs.forEach(t => t.classList.remove("active"));
             sections.forEach(s => s.classList.add("d-none"));
 
-            // Activa la pestaña actual y muestra su sección correspondiente
+            // activar
             tab.classList.add("active");
             document.querySelector(tab.dataset.bsTarget).classList.remove("d-none");
         });
     });
+
     // Modal de producto
     const modal = new bootstrap.Modal(document.getElementById("productModal"));
     const menuItems = document.querySelectorAll(".menu-item");
 
-    menuItems.forEach(item => {
-      item.addEventListener("click", () => {
-      const name = item.dataset.name || "Producto";
-      const desc = item.dataset.desc || "";
-      const price = item.dataset.price || "";
-      const imgs = item.dataset.imgs ? item.dataset.imgs.split(",") : [item.dataset.img];
-      const ingredients = item.dataset.ingredients ? item.dataset.ingredients.split(",") : [];
-      const calories = item.dataset.calories || "";
+    menuItems.forEach((item, index) => {
+        item.addEventListener("click", () => {
+            // Obtiene el producto correspondiente del array
+            const producto = productos[index];
 
-      // Rellenar modal
-      document.getElementById("productModalLabel").textContent = name;
-      document.getElementById("productModalDesc").textContent = desc;
-      document.getElementById("productModalPrice").textContent = price;
-      document.getElementById("productModalCalories").textContent = calories;
+            // Rellena el contenido del modal con los datos del producto
+            document.getElementById("productModalLabel").textContent = producto.name;
+            document.getElementById("productModalDesc").textContent = producto.desc;
+            document.getElementById("productModalPrice").textContent = producto.price;
+            document.getElementById("productModalCalories").textContent = producto.calories;
 
-      // Ingredientes
-      const ingList = document.getElementById("productModalIngredients");
-      ingList.innerHTML = "";
-      ingredients.forEach(ing => {
-        const li = document.createElement("li");
-        li.textContent = ing.trim();
-        ingList.appendChild(li);
-      });
+            /**
+             * @type {HTMLElement} ingList - Elemento HTML para la lista de ingredientes del modal.
+             */
+            const ingList = document.getElementById("productModalIngredients");
+            ingList.innerHTML = ""; // Limpia la lista de ingredientes
 
-      // Carrusel
-      const carouselInner = document.getElementById("productModalImgs");
-      carouselInner.innerHTML = "";
-      imgs.forEach((src, i) => {
-        const div = document.createElement("div");
-        div.className = `carousel-item ${i === 0 ? "active" : ""}`;
-        div.innerHTML = `<img src="${src.trim()}" class="d-block w-100" alt="${name}">`;
-        carouselInner.appendChild(div);
-      });
+            // Itera sobre cada ingrediente y crea un elemento 'li' para cada uno
+            producto.ingredients.forEach(ing => {
+                const li = document.createElement("li");
+                li.textContent = ing.trim(); // Elimina espacios en blanco al inicio y al final
+                ingList.appendChild(li); // Agrega el elemento 'li' a la lista
+            });
 
-      modal.show();
-      });
+            /**
+             * @type {HTMLElement} carouselInner - Elemento HTML para el carrusel de imágenes del modal.
+             */
+            const carouselInner = document.getElementById("productModalImgs");
+            carouselInner.innerHTML = ""; // Limpia el carrusel de imágenes
+
+            // Crea el elemento 'img'
+            const div = document.createElement("div");
+            div.className = `carousel-item active`; // Agrega la clase 'active' al primer elemento
+            div.innerHTML = `<img src="${producto.img.trim()}" class="d-block w-100" alt="${producto.name}">`;
+            carouselInner.appendChild(div); // Agrega el elemento 'div' al carrusel
+
+            modal.show(); // Muestra el modal
+        });
     });
 
-  /**
-   * Botón para alternar la visibilidad del footer.
-   * @type {HTMLElement}
-   */
-  const toggleFooterBtn = document.getElementById("toggleFooterBtn");
+    /**
+     * Botón para alternar la visibilidad del footer.
+     * @type {HTMLElement}
+     */
+    const toggleFooterBtn = document.getElementById("toggleFooterBtn");
     /**
      * Elemento footer.
      * @type {HTMLElement}
@@ -77,13 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     toggleFooterBtn.addEventListener("click", () => {
         footer.classList.toggle("show");
-        // Actualiza el icono de la flecha según el estado del footer
+        // Actualizar el icono de la flecha según el estado
         if (footer.classList.contains("show")) {
             toggleFooterBtn.classList.replace("bi-caret-up-fill", "bi-caret-down-fill");
         } else {
             toggleFooterBtn.classList.replace("bi-caret-down-fill", "bi-caret-up-fill");
         }
-
-
     });
 });

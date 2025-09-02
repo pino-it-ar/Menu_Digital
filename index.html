@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es">    
+<html lang="es">
+
 <head>
 
     <meta charset="UTF-8">
@@ -17,64 +18,67 @@
 </head>
 
 <body>
+    <!-- Contenedor principal -->
     <main class="container py-2 mt-0">
+        <!-- Encabezado -->
         <header class="mx-auto text-center bg-primary">
-          <img src="./assets/img/logo_pino.jpg" alt="Logo del Restaurante">
-          <h1 class="fw-bold text-white">Nombre del Restaurante</h1>
-          <small class="text-white-50">Menú Digital by Pino IT</small>
+            <img src="./assets/img/logo_pino.jpg" alt="Logo del Restaurante">
+            <h1 class="fw-bold text-white">Nombre del Restaurante</h1>
+            <small class="text-white-50">Menú Digital by Pino IT</small>
         </header>
 
-        <!-- Modal -->
+        <!-- Modal: Ventana emergente para mostrar detalles del producto -->
         <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content border-0 shadow rounded-4">
-
-                <!-- Cerrar -->
-                <div class="modal-header border-0">
-                <h5 id="productModalLabel" class="fw-bold mb-0"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-
-                <div class="modal-body">
-
-                <!-- Carrusel -->
-                <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner rounded-3" id="productModalImgs">
-                    <!-- Las imágenes se insertan dinámicamente -->
+                <div class="modal-content border-0 shadow rounded-4">
+                    <!-- Cabecera del modal -->
+                    <div class="modal-header border-0">
+                        <h5 id="productModalLabel" class="fw-bold mb-0"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                    </button>
-                </div>
-                <!-- Descripción -->
-                <div class="mt-4">
-                    <h6 class="fw-bold">Descripción</h6>
-                    <p id="productModalDesc" class="text-muted small"></p>
-                </div>
 
-                <!-- Ingredientes -->
-                <div class="mt-3">
-                    <h6 class="fw-bold">Ingredientes</h6>
-                    <ul id="productModalIngredients" class="text-muted small"></ul>
-                </div>
+                    <!-- Cuerpo del modal -->
+                    <div class="modal-body">
+                        <!-- Carrusel de imágenes del producto -->
+                        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner rounded-3" id="productModalImgs">
+                                <!-- Las imágenes se insertan dinámicamente -->
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
 
-                <!-- Valor Calórico -->
-                <div class="mt-3">
-                    <h6 class="fw-bold">Valor calórico</h6>
-                    <p id="productModalCalories" class="text-muted small"></p>
-                </div>
-                
-                 <!-- Precio -->
-                <div class="mt-3">
-                    <h6 class="fw-bold">Precio</h6>
-                    <p id="productModalPrice" class="fw-bold text-dark"></p>
-                </div>           
+                        <!-- Descripción del producto -->
+                        <div class="mt-4">
+                            <h6 class="fw-bold">Descripción</h6>
+                            <p id="productModalDesc" class="text-muted small"></p>
+                        </div>
 
+                        <!-- Ingredientes del producto -->
+                        <div class="mt-3">
+                            <h6 class="fw-bold">Ingredientes</h6>
+                            <ul id="productModalIngredients" class="text-muted small"></ul>
+                        </div>
+
+                        <!-- Valor Calórico del producto -->
+                        <div class="mt-3">
+                            <h6 class="fw-bold">Valor calórico</h6>
+                            <p id="productModalCalories" class="text-muted small"></p>
+                        </div>
+
+                        <!-- Precio del producto -->
+                        <div class="mt-3">
+                            <h6 class="fw-bold">Precio</h6>
+                            <p id="productModalPrice" class="fw-bold text-dark"></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
         <!-- Menú de productos -->
@@ -136,15 +140,10 @@
                 <!-- Sugerencias -->
                 <section id="sugerencias" class="tab-pane fade show active" role="tabpanel"
                     aria-labelledby="sugerencias-tab">
-                    <article class="menu-item d-flex align-items-center"
-                        data-name="Bruschetta"
-                        data-img="https://lovefoodfeed.com/wp-content/uploads/2023/09/Pesto-ciabatta-bruschetta-1200-07.jpg"
-                        data-price="$3200"
-                        data-desc="Deliciosa Bruschetta italiana con pan rústico, tomate fresco, ajo y albahaca."
-                        data-ingredients="Pan rústico, Tomate fresco, Ajo, Albahaca, Aceite de oliva"
-                        data-calories="210 kcal">
-  
-                        <img src="https://lovefoodfeed.com/wp-content/uploads/2023/09/Pesto-ciabatta-bruschetta-1200-07.jpg" class="thumb me-3" alt="Bruschetta">
+                    <article class="menu-item d-flex align-items-center">
+
+                        <img src="https://lovefoodfeed.com/wp-content/uploads/2023/09/Pesto-ciabatta-bruschetta-1200-07.jpg"
+                            class="thumb me-3" alt="Bruschetta">
                         <div class="flex-grow-1">
                             <p class="mb-1 fw-semibold">Bruschetta</p>
                             <small class="text-muted">Pan con tomate y albahaca</small>
@@ -152,15 +151,10 @@
                         <span class="fw-bold">$3200</span>
                     </article>
 
-                    <article class="menu-item d-flex align-items-center"
-                        data-name="Tostados de JyQ"
-                        data-img="https://images.pexels.com/photos/15110223/pexels-photo-15110223.jpeg"
-                        data-price="$3500"
-                        data-desc="Deliciosos tostados de jamón y queso con pan crujiente."
-                        data-ingredients="Pan de molde, Jamón cocido, Queso, Manteca"
-                        data-calories="320 kcal">
+                    <article class="menu-item d-flex align-items-center">
 
-                        <img src="https://images.pexels.com/photos/15110223/pexels-photo-15110223.jpeg" class="thumb me-3" alt="Tostados de JyQ">
+                        <img src="https://images.pexels.com/photos/15110223/pexels-photo-15110223.jpeg"
+                            class="thumb me-3" alt="Tostados de JyQ">
                         <div class="flex-grow-1">
                             <p class="mb-1 fw-semibold">Tostados de JyQ</p>
                             <small class="text-muted">Jamón y queso</small>
@@ -168,15 +162,10 @@
                         <span class="fw-bold">$3500</span>
                     </article>
 
-                    <article class="menu-item d-flex align-items-center"
-                        data-name="Baguette"
-                        data-img="https://images.pexels.com/photos/31023834/pexels-photo-31023834.jpeg"
-                        data-price="$4000"
-                        data-desc="Deliciosa Baguette con jamón, queso y vegetales frescos."
-                        data-ingredients="Pan rústico, Jamón crudo, Queso, Vegetales frescos, Aceite de oliva"
-                        data-calories="250 kcal">
+                    <article class="menu-item d-flex align-items-center">
 
-                        <img src="https://images.pexels.com/photos/31023834/pexels-photo-31023834.jpeg" class="thumb me-3" alt="Baguette">
+                        <img src="https://images.pexels.com/photos/31023834/pexels-photo-31023834.jpeg"
+                            class="thumb me-3" alt="Baguette">
                         <div class="flex-grow-1">
                             <p class="mb-1 fw-semibold">Baguette</p>
                             <small class="text-muted">Jamón crudo, queso y vegetales</small>
@@ -184,15 +173,10 @@
                         <span class="fw-bold">$4000</span>
                     </article>
 
-                    <article class="menu-item d-flex align-items-center"
-                        data-name="Pancakes Frutales"
-                        data-img="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg"
-                        data-price="$3800"
-                        data-desc="Deliciosos pancakes con frutas frescas y sirope de arce."
-                        data-ingredients="Harina, Huevos, Leche, Frutas frescas, Sirope de arce"
-                        data-calories="320 kcal">
+                    <article class="menu-item d-flex align-items-center">
 
-                        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg" class="thumb me-3" alt="Pancakes Frutales">
+                        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg"
+                            class="thumb me-3" alt="Pancakes Frutales">
                         <div class="flex-grow-1">
                             <p class="mb-1 fw-semibold">Pancakes Frutales</p>
                             <small class="text-muted">Frutas frescas y sirope de arce</small>
@@ -200,22 +184,17 @@
                         <span class="fw-bold">$3800</span>
                     </article>
 
-                    <article class="menu-item d-flex align-items-center"
-                        data-name="Ensalada Cesar"
-                        data-img="https://images.pexels.com/photos/33674357/pexels-photo-33674357.jpeg"
-                        data-price="$4000"
-                        data-desc="Deliciosa Ensalada Cesar con pollo, lechuga y aderezo cremoso."
-                        data-ingredients="Pollo, Lechuga, Croutons, Queso parmesano, Aderezo Cesar"
-                        data-calories="320 kcal">
+                    <article class="menu-item d-flex align-items-center">
 
-                        <img src="https://images.pexels.com/photos/33674357/pexels-photo-33674357.jpeg" class="thumb me-3" alt="Ensalada Cesar">
+                        <img src="https://images.pexels.com/photos/33674357/pexels-photo-33674357.jpeg"
+                            class="thumb me-3" alt="Ensalada Cesar">
                         <div class="flex-grow-1">
                             <p class="mb-1 fw-semibold">Ensalada Cesar</p>
                             <small class="text-muted">Pollo, lechuga y aderezo cremoso</small>
                         </div>
                         <span class="fw-bold">$4000</span>
                     </article>
-                    
+
                 </section>
                 <!-- Cafetería -->
                 <section id="cafeteria" class="tab-pane fade" role="tabpanel" aria-labelledby="cafeteria-tab">
@@ -228,7 +207,7 @@
                         </div>
                         <span class="fw-bold">$2500</span>
                     </article>
-                    
+
                     <article class="menu-item d-flex align-items-center">
                         <img src="https://www.marketresearchintellect.com/images/blogs/sipping-success-exploring-the-dynamics-of-the-espresso-coffee-market.webp"
                             class="thumb me-3" alt="Espresso">
@@ -413,6 +392,8 @@
 
     <!-- Script personalizado -->
     <script src="./js/script.js"></script>
+    <!-- Script con la informacion de los productos -->
+    <script src="./js/productos.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

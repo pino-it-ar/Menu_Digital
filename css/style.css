@@ -170,6 +170,12 @@ header small {
     align-items: center;
     scroll-snap-align: start; /* Efecto "snap" al hacer scroll */
 }
+
+.modal-dialog {
+    max-width: 26.25rem; /* 420px - el mismo que .menu-card */
+    margin: 1.75rem auto; /* Centra el modal */
+}
+
 .modal-body {
   max-height: 70vh; /* no ocupa toda la pantalla */
   overflow-y: auto; /* scroll interno */
