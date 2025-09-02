@@ -276,25 +276,6 @@ header small {
     overflow-y: auto !important; /* Añade scroll si el contenido excede la altura */
 }
 
-/* Para pantallas mayores a 425px */
-@media (min-width: 426px) {
-    .modal-dialog {
-        width: 24.25rem !important; /* Ancho fijo para pantallas grandes */
-    }
-}
-
-/* Prevenir que Bootstrap modifique estos estilos con sus media queries */
-@media (min-width: 576px) {
-    .modal-dialog {
-        max-width: 24.25rem !important;
-        margin: 0 auto !important;
-        position: absolute !important;
-        top: 50% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
-    }
-}
-
 /* Estilos para el botón de cerrar en el carrusel */
 .modal-content .btn-close {
     position: absolute !important;
@@ -328,5 +309,89 @@ header small {
 /* Estilos para el scrollbar del modal */
 .modal-content::-webkit-scrollbar {
     display: none;
+}
+
+/* Para pantallas mayores a 425px */
+@media (min-width: 426px) {
+    .modal-dialog {
+        width: 24.25rem !important; /* Ancho fijo para pantallas grandes */
+    }
+}
+
+/* Prevenir que Bootstrap modifique estos estilos con sus media queries */
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 24.25rem !important;
+        margin: 0 auto !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+}
+
+/* Footer y su Animación */
+footer {
+    position: absolute; /* Cambia a relative */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    /* Encima del contenido */
+    transform: translateY(calc(100% - 24px));
+    transition: transform 0.5s ease-in-out;
+    /* Animación suave */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* Footer visible */
+footer.show {
+    transform: translateY(0);
+    /* Desliza hacia arriba */
+}
+
+/* Íconos de redes sociales en el footer */
+.footer_redes {
+    font-size: 2.1rem; /* Tamaño de los íconos */
+}
+
+/* Contenedor del mapa responsive */
+.mapa {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 0;
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        height: 200px;
+    }
+
+    img {
+    width: 100%;
+        height: auto;
+    }
+}
+
+/* Botón para mostrar/ocultar el footer */
+#toggleFooterBtn {
+    position: absolute;
+    top: -10px;
+    /* Encima del footer */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centrado horizontalmente */
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 50%;
+    /* Circular */
+    width: 80px;
+    height: 35px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
