@@ -111,7 +111,7 @@ header small {
     overflow-y: auto; /* Scroll vertical */
     padding-right: 0.5rem; /* Evita que el scroll tape el texto */
     -webkit-overflow-scrolling: touch; /* Scroll fluido en iOS */
-    max-height: 31.25rem;
+    max-height: 26.25rem;
     /* Altura máxima */
 }
 
