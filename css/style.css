@@ -186,6 +186,7 @@ header small {
 
 .nav-tabs .nav-link {
     color: #000;
+    border-bottom: 1px solid white;
     /* color normal */
 }
 
@@ -205,15 +206,43 @@ header small {
     /* evita saltos de línea */
 }
 
+
 .nav-scroll-wrapper::-webkit-scrollbar {
-    height: 6px;
-    /* tamaño de la barra */
+    width: 5px; /* Ancho de la barra */
+    height: 5px;
 }
 
 .nav-scroll-wrapper::-webkit-scrollbar-thumb {
-    background: #ccc;
-    /* color del scroll */
-    border-radius: 3px;
+    background: #0d6efd; /* Color del "pulgar" */
+    border-radius: 5px;
+}
+
+.nav-scroll-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color del "track" */
+}
+
+/* Opcional: Hover effect */
+.nav-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #0b5ed7;
+}
+
+.tab-content::-webkit-scrollbar {
+    width: 5px; /* Ancho de la barra */
+    height: 5px;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+    background: #0d6efd; /* Color del "pulgar" */
+    border-radius: 5px;
+}
+
+.tab-content::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color del "track" */
+}
+
+/* Opcional: Hover effect */
+.tab-content::-webkit-scrollbar-thumb:hover {
+    background: #0b5ed7;
 }
 
 #menuTabs {
