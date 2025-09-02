@@ -87,6 +87,7 @@ header small {
 }
 
 .menu-card {
+    padding-top: 0.8rem;
     background: #fff;
     border-radius: 0 0 1rem 1rem;
     box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
