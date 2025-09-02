@@ -262,12 +262,12 @@ header small {
 .modal-dialog {
     max-width: 24.25rem; /* 420px - el mismo que .menu-card */
     margin: auto; /* Centra el modal */
-    top: 0%;
-    transform: translateY(-50%);
+    top: 50%; /* Centra verticalmente */
+    /* transform: translateY(-50%); Ajusta el centrado vertical */
 }
 
 .modal-body {
-  max-height: 40vh; /* no ocupa toda la pantalla */
+  max-height: 70vh; /* no ocupa toda la pantalla */
   overflow-y: auto; /* scroll interno */
 }
 
@@ -277,8 +277,8 @@ header small {
     font-size: .9rem; 
     line-height: 1.3; 
     padding: .75rem 1rem; 
-    max-height: 70vh; 
-    overflow-y: auto;
+    max-height: 70vh;
+    overflow-y: auto; /* Agrega esta línea */
 }
 #productModal img, #productModal .carousel-inner img {
     max-height: 16rem; 
@@ -311,18 +311,15 @@ header small {
     font-size: .8rem; color: #555;
 }
 
-
-
 /* Footer y su Animación */
 footer {
-    position: absolute;
+    position: relative; /* Cambia a relative */
     bottom: 0;
     left: 0;
     width: 100%;
     z-index: 100;
     /* Encima del contenido */
-    transform: translateY(calc(100% - 24px));
-    /* Oculto por defecto */
+    transform: translateY(0); /* Elimina el transform */
     transition: transform 0.5s ease-in-out;
     /* Animación suave */
     border-top-left-radius: 0;
