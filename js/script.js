@@ -13,15 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
-            // Desactiva todas las pestañas y oculta todas las secciones
+            // reset
             tabs.forEach(t => t.classList.remove("active"));
             sections.forEach(s => s.classList.add("d-none"));
 
-            // Activa la pestaña actual y muestra su sección correspondiente
+            // activar
             tab.classList.add("active");
             document.querySelector(tab.dataset.bsTarget).classList.remove("d-none");
         });
     });
+
+    // Modal de producto
+    const modal = new bootstrap.Modal(document.getElementById("productModal"));
 
     /**
      * Botón para alternar la visibilidad del footer.
@@ -36,11 +39,87 @@ document.addEventListener("DOMContentLoaded", () => {
 
     toggleFooterBtn.addEventListener("click", () => {
         footer.classList.toggle("show");
-        // Actualiza el icono de la flecha según el estado del footer
+        // Actualizar el icono de la flecha según el estado
         if (footer.classList.contains("show")) {
             toggleFooterBtn.classList.replace("bi-caret-up-fill", "bi-caret-down-fill");
         } else {
             toggleFooterBtn.classList.replace("bi-caret-down-fill", "bi-caret-up-fill");
         }
+    });
+
+    // Array con los IDs de las secciones del menú
+    const menuSections = ["sugerencias", "cafeteria", "dulces", "bebidas", "salados", "alcohol"];
+
+    // Itera sobre cada sección del menú
+    menuSections.forEach(sectionId => {
+        // Obtiene el contenedor de la sección actual
+        const menuContainer = document.getElementById(`${sectionId}-menu`);
+
+        // Filtra los productos que pertenecen a la sección actual
+        const productosSeccion = productos.filter(producto => producto.section.includes(sectionId));
+
+        // Genera dinámicamente el HTML de los elementos del menú
+        productosSeccion.forEach(producto => {
+            const menuItem = document.createElement("article");
+            menuItem.className = "menu-item d-flex align-items-center";
+            menuItem.innerHTML = `
+                <img src="${producto.img[0]}" class="thumb me-3" alt="${producto.name}">
+                <div class="flex-grow-1">
+                    <p class="mb-1 fw-semibold">${producto.name}</p>
+                    <small class="text-muted">${producto.desc}</small>
+                </div>
+                <span class="fw-bold">${producto.price}</span>
+            `;
+            menuContainer.appendChild(menuItem);
+        });
+
+        // Obtiene los elementos del menú después de generarlos dinámicamente
+        const menuItems = document.querySelectorAll(".menu-item");
+
+        // Agrega el event listener a cada elemento del menú
+        menuItems.forEach(item => {
+            item.addEventListener("click", () => {
+                // Obtiene el nombre del producto del elemento del menú
+                const productName = item.querySelector("p").textContent;
+
+                // Busca el producto en el array de productos
+                const producto = productos.find(p => p.name === productName);
+
+                // Rellena el contenido del modal con los datos del producto
+                document.getElementById("productModalLabel").textContent = producto.name;
+                document.getElementById("productModalDesc").textContent = producto.desc;
+                document.getElementById("productModalPrice").textContent = producto.price;
+                document.getElementById("productModalCalories").textContent = producto.calories;
+
+                /**
+                 * @type {HTMLElement} ingList - Elemento HTML para la lista de ingredientes del modal.
+                 */
+                const ingList = document.getElementById("productModalIngredients");
+                ingList.innerHTML = ""; // Limpia la lista de ingredientes
+
+                // Itera sobre cada ingrediente y crea un elemento 'li' para cada uno
+                producto.ingredients.forEach(ing => {
+                    const li = document.createElement("li");
+                    li.textContent = ing.trim(); // Elimina espacios en blanco al inicio y al final
+                    ingList.appendChild(li); // Agrega el elemento 'li' a la lista
+                });
+
+                /**
+                 * @type {HTMLElement} carouselInner - Elemento HTML para el carrusel de imágenes del modal.
+                 */
+                const carouselInner = document.getElementById("productModalImgs");
+                carouselInner.innerHTML = ""; // Limpia el carrusel de imágenes
+
+                // Itera sobre cada imagen y crea un elemento 'div' para cada una
+                producto.img.forEach((image, index) => {
+                    const div = document.createElement("div");
+                    div.className = `carousel-item ${index === 0 ? "active" : ""}`; // Agrega la clase 'active' al primer elemento
+                    div.innerHTML = `<img src="${image.trim()}" class="d-block w-100" alt="${producto.name}">`; // Crea el elemento 'img'
+                    carouselInner.appendChild(div); // Agrega el elemento 'div' al carrusel
+                });
+
+                modal.show(); // Muestra el modal
+            });
+        });
     });
 });
