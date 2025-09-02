@@ -260,12 +260,14 @@ header small {
 }
 
 .modal-dialog {
-    max-width: 26.25rem; /* 420px - el mismo que .menu-card */
-    margin: 1.75rem auto; /* Centra el modal */
+    max-width: 24.25rem; /* 420px - el mismo que .menu-card */
+    margin: auto; /* Centra el modal */
+    top: 0%;
+    transform: translateY(-50%);
 }
 
 .modal-body {
-  max-height: 70vh; /* no ocupa toda la pantalla */
+  max-height: 40vh; /* no ocupa toda la pantalla */
   overflow-y: auto; /* scroll interno */
 }
 
