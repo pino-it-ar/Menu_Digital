@@ -326,6 +326,29 @@ header small {
     }
 }
 
+/* Ajustes para el contenido del modal */
+.modal-body {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Estilo para el pie de página del modal donde va el precio */
+.modal-footer {
+    border-top: 1px solid #eee; /* Línea separadora sutil */
+    background-color: #f8f9fa; /* Fondo ligeramente gris */
+    border-bottom-left-radius: 1rem; /* Bordes redondeados acordes al modal */
+    border-bottom-right-radius: 1rem;
+}
+
+#productModalPrice {
+    margin: 0; /* Quitamos el margen por defecto del párrafo */
+}
+
+/* Ocultamos la cabecera del modal que ya no usamos */
+.modal-header {
+    display: none;
+}
+
 /* Footer y su Animación */
 footer {
     position: absolute; /* Cambia a relative */

@@ -35,62 +35,51 @@
         <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content border-0 shadow rounded-4">
-
-                    <!-- Carrusel de imágenes del producto -->
                     <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Cerrar">
-                            <i class="bi bi-x-circle"></i> <!-- Icono de Bootstrap Icons -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar">
+                            <i class="bi bi-x-circle"></i>
                         </button>
                         <div class="carousel-inner rounded-3" id="productModalImgs">
-                            <!-- Las imágenes se insertan dinámicamente -->
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel"
-                            data-bs-slide="prev">
+                            </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
-                    <!-- Cabecera del modal -->
-                    <div class="modal-header mb-0 border-0">
-                        <h5 id="productModalLabel" class="fw-bold mb-0"></h5>
-                    </div>
 
-                    <!-- Cuerpo del modal -->
-                    <div class="mt-0 modal-body">
-                        <!-- Descripción del producto -->
-                        <div class="mt-0">
+                    <div class="modal-body">
+                        <h5 id="productModalLabel" class="fw-bold mb-2"></h5>
+                        
+                        <div class="mt-2">
                             <h6 class="fw-bold">Descripción</h6>
                             <p id="productModalDesc" class="text-muted small"></p>
                         </div>
 
-                        <!-- Ingredientes del producto -->
                         <div class="mt-3">
                             <h6 class="fw-bold">Ingredientes</h6>
-                            <ul id="productModalIngredients" class="text-muted small"></ul>
+                            <ul id="productModalIngredients" class="text-muted small ps-3"></ul>
                         </div>
 
-                        <!-- Valor Calórico del producto -->
                         <div class="mt-3">
                             <h6 class="fw-bold">Valor calórico</h6>
                             <p id="productModalCalories" class="text-muted small"></p>
                         </div>
-
-                        <!-- Precio del producto -->
-                        <div class="mt-3">
-                            <h6 class="fw-bold">Precio</h6>
-                            <p id="productModalPrice" class="fw-bold text-dark"></p>
-                        </div>
+                    </div>
+                    
+                    <div class="modal-footer d-flex justify-content-center">
+                        <p id="productModalPrice" class="fw-bold text-dark fs-4"></p>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Menú de productos -->
-        <section class="menu-card mx-auto pt-2 p-4 pb-0">
+        <section class="menu-card mx-auto p-4 pb-0">
+
             <!-- Pestañas de navegación del menú -->
-            <nav class="nav-scroll-wrapper mb-1">
+
+            <nav class="nav-scroll-wrapper">
                 <ul class="nav nav-tabs flex-nowrap icon-tabs" id="menuTabs" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="sugerencias-tab" data-bs-toggle="tab"
@@ -137,6 +126,7 @@
                     </li>
                 </ul>
             </nav>
+
             <!--MENU -->
             <!-- Secciones del menú (contenido de cada pestaña) -->
             <div class="tab-content">
