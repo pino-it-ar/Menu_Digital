@@ -91,18 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("productModalPrice").textContent = producto.price;
                 document.getElementById("productModalCalories").textContent = producto.calories;
 
-                /**
-                 * @type {HTMLElement} ingList - Elemento HTML para la lista de ingredientes del modal.
-                 */
-                const ingList = document.getElementById("productModalIngredients");
-                ingList.innerHTML = ""; // Limpia la lista de ingredientes
-
-                // Itera sobre cada ingrediente y crea un elemento 'li' para cada uno
-                producto.ingredients.forEach(ing => {
-                    const li = document.createElement("li");
-                    li.textContent = ing.trim(); // Elimina espacios en blanco al inicio y al final
-                    ingList.appendChild(li); // Agrega el elemento 'li' a la lista
-                });
+                // Une los ingredientes en un solo string, separados por coma y espacio
+                document.getElementById("productModalIngredients").textContent = producto.ingredients.join(', ');
 
                 /**
                  * @type {HTMLElement} carouselInner - Elemento HTML para el carrusel de imágenes del modal.

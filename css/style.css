@@ -299,7 +299,6 @@ header small {
     overflow: hidden;
     max-height: 25vh;
     width: 100%;
-    border-radius: 0 0 1rem 1rem;
 }
 
 /* Estilos para el scrollbar del modal */
@@ -335,7 +334,7 @@ header small {
 /* Estilo para el pie de página del modal donde va el precio */
 .modal-footer {
     border-top: 1px solid #eee; /* Línea separadora sutil */
-    background-color: #f8f9fa; /* Fondo ligeramente gris */
+    background-color: #efefef; /* Fondo ligeramente gris */
     border-bottom-left-radius: 1rem; /* Bordes redondeados acordes al modal */
     border-bottom-right-radius: 1rem;
 }
@@ -347,6 +346,26 @@ header small {
 /* Ocultamos la cabecera del modal que ya no usamos */
 .modal-header {
     display: none;
+}
+
+/* Contenedor del carrusel para posicionamiento relativo */
+#productCarousel {
+    position: relative;
+}
+
+/* Estilos para el título sobre el carrusel (CORREGIDO) */
+#productModalLabel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    /* Ajustamos el padding para mejor alineación vertical */
+    padding: 1.5rem 1rem 0.75rem 1rem;
+    margin: 0;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho/alto */
 }
 
 /* Footer y su Animación */
