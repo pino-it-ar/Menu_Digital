@@ -334,7 +334,7 @@ header small {
 /* Estilo para el pie de página del modal donde va el precio */
 .modal-footer {
     border-top: 1px solid #eee; /* Línea separadora sutil */
-    background-color: #efefef; /* Fondo ligeramente gris */
+    background-color: #f8f9fa; /* Fondo ligeramente gris */
     border-bottom-left-radius: 1rem; /* Bordes redondeados acordes al modal */
     border-bottom-right-radius: 1rem;
 }
@@ -366,6 +366,35 @@ header small {
     padding: 1.5rem 1rem 0.75rem 1rem;
     margin: 0;
     box-sizing: border-box; /* Asegura que el padding se incluya en el ancho/alto */
+}
+
+/* Contenedor para los íconos de tags */
+.product-tags {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 11; /* Un poco más que el título para que no se superpongan */
+    padding: 1rem;
+    display: flex;
+    gap: 0.5rem; /* Espacio entre los íconos */
+}
+
+/* Estilo base para cada ícono (estado "apagado") */
+.tag-icon {
+    font-size: 1.30rem;
+    color: white;
+    padding: 0.1rem; /* Círculo perfecto */
+    opacity: 0.5; /* Lo hacemos un poco transparente */
+    transition: all 0.3s ease; /* Transición suave */
+    display: none; /* Por defecto están ocultos */
+}
+
+/* Estilo para el ícono "prendido" */
+.tag-icon.active {
+    display: inline-block; /* Hacemos visible el ícono */
+    opacity: 1; /* Opacidad completa */
+    color: white; /* Un color blanco para indicar que está activo */
+    text-shadow: 0 0 5px black;
 }
 
 /* Footer y su Animación */

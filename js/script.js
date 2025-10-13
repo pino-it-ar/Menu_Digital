@@ -94,6 +94,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Une los ingredientes en un solo string, separados por coma y espacio
                 document.getElementById("productModalIngredients").textContent = producto.ingredients.join(', ');
 
+                // Seleccionamos los íconos por su clase
+                const veggieIcon = document.querySelector(".bi-emoji-smile");
+                const sinAzucarIcon = document.querySelector(".bi-slash-circle");
+                const sinTaccIcon = document.querySelector(".bi-universal-access-circle");
+
+                // Reseteamos los íconos (quitamos la clase 'active')
+                veggieIcon.classList.remove("active");
+                sinAzucarIcon.classList.remove("active");
+                sinTaccIcon.classList.remove("active");
+
+                // Verificamos si el producto tiene tags y si cada tag es true
+                if (producto.tags) {
+                    if (producto.tags.veggie) {
+                        veggieIcon.classList.add("active");
+                    }
+                    if (producto.tags.sinAzucar) {
+                        sinAzucarIcon.classList.add("active");
+                    }
+                    if (producto.tags.sinTacc) {
+                        sinTaccIcon.classList.add("active");
+                    }
+                }
+
                 /**
                  * @type {HTMLElement} carouselInner - Elemento HTML para el carrusel de imágenes del modal.
                  */
