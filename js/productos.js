@@ -11,7 +11,12 @@ const productos = [
         desc: "Deliciosa Bruschetta italiana con pan rústico, tomate fresco, ajo y albahaca.",
         ingredients: ["Pan rústico", "Tomate fresco", "Ajo", "Albahaca", "Aceite de oliva"],
         calories: "210 kcal",
-        section: ["sugerencias"] // section es un array
+        section: ["sugerencias"],
+        tags: {
+            veggie: true,
+            sinAzucar: true,
+            sinTacc: false // El pan tiene TACC
+        }
     },
     {
         name: "Tostados de JyQ",
@@ -20,7 +25,12 @@ const productos = [
         desc: "Deliciosos tostados de jamón y queso con pan crujiente.",
         ingredients: ["Pan de molde", "Jamón cocido", "Queso", "Manteca"],
         calories: "320 kcal",
-        section: ["sugerencias", "salados"] // section es un array
+        section: ["sugerencias", "salados"],
+        tags: {
+            veggie: false,
+            sinAzucar: true,
+            sinTacc: false // El pan tiene TACC
+        }
     },
     {
         name: "Baguette",
@@ -29,7 +39,12 @@ const productos = [
         desc: "Deliciosa Baguette con jamón, queso y vegetales frescos.",
         ingredients: ["Pan rústico", "Jamón crudo", "Queso", "Vegetales frescos", "Aceite de oliva"],
         calories: "250 kcal",
-        section: ["sugerencias"] // section es un array
+        section: ["sugerencias"],
+        tags: {
+            veggie: false,
+            sinAzucar: true,
+            sinTacc: false // El pan tiene TACC
+        }
     },
     {
         name: "Pancakes Frutales",
@@ -38,7 +53,12 @@ const productos = [
         desc: "Deliciosos pancakes con frutas frescas y sirope de arce.",
         ingredients: ["Harina", "Huevos", "Leche", "Frutas frescas", "Sirope de arce"],
         calories: "320 kcal",
-        section: ["sugerencias"] // section es un array
+        section: ["sugerencias"],
+        tags: {
+            veggie: true,
+            sinAzucar: false,
+            sinTacc: false // Harina común
+        }
     },
     {
         name: "Ensalada Cesar",
@@ -47,7 +67,12 @@ const productos = [
         desc: "Deliciosa Ensalada Cesar con pollo, lechuga y aderezo cremoso.",
         ingredients: ["Pollo", "Lechuga", "Croutons", "Queso parmesano", "Aderezo Cesar"],
         calories: "320 kcal",
-        section: ["sugerencias"] // section es un array
+        section: ["sugerencias"],
+        tags: {
+            veggie: false,
+            sinAzucar: true,
+            sinTacc: false // Croutons tienen TACC
+        }
     },
     {
         name: "Tarta de Frutas",
@@ -56,7 +81,12 @@ const productos = [
         desc: "Deliciosa tarta de frutas frescas con base de galleta.",
         ingredients: ["Galletas", "Mantequilla", "Frutas frescas", "Crema"],
         calories: "320 kcal",
-        section: ["cafeteria"] // section es un array
+        section: ["cafeteria"],
+        tags: {
+            veggie: true,
+            sinAzucar: false,
+            sinTacc: false // Galletas tienen TACC
+        }
     },
     {
         name: "Café con Leche",
@@ -65,7 +95,12 @@ const productos = [
         desc: "Clásico café con leche caliente.",
         ingredients: ["Café", "Leche"],
         calories: "120 kcal",
-        section: ["cafeteria"] // section es un array
+        section: ["cafeteria"],
+        tags: {
+            veggie: true,
+            sinAzucar: false,
+            sinTacc: true
+        }
     },
     {
         name: "Sandwich de Jamón y Queso",
@@ -74,7 +109,12 @@ const productos = [
         desc: "Sandwich de jamón y queso en pan fresco.",
         ingredients: ["Pan", "Jamón", "Queso"],
         calories: "280 kcal",
-        section: ["cafeteria"] // section es un array
+        section: ["cafeteria"],
+        tags: {
+            veggie: false,
+            sinAzucar: true,
+            sinTacc: false // El pan tiene TACC
+        }
     },
     {
         name: "Jugo de Naranja",
@@ -83,7 +123,12 @@ const productos = [
         desc: "Jugo de naranja natural recién exprimido.",
         ingredients: ["Naranja"],
         calories: "100 kcal",
-        section: ["cafeteria"] // section es un array
+        section: ["cafeteria"],
+        tags: {
+            veggie: true,
+            sinAzucar: true,
+            sinTacc: true
+        }
     },
     {
         name: "Medialunas",
@@ -92,7 +137,12 @@ const productos = [
         desc: "Medialunas recién horneadas, perfectas para acompañar tu café.",
         ingredients: ["Harina", "Grasa", "Azúcar"],
         calories: "150 kcal",
-        section: ["cafeteria"] // section es un array
+        section: ["cafeteria"],
+        tags: {
+            veggie: true,
+            sinAzucar: false,
+            sinTacc: false // Harina común
+        }
     },
     {
         name: "Brownie",
@@ -101,7 +151,12 @@ const productos = [
         desc: "Delicioso brownie de chocolate con nueces.",
         ingredients: ["Chocolate", "Nueces", "Harina", "Azúcar"],
         calories: "350 kcal",
-        section: ["dulces"] // section es un array
+        section: ["dulces"],
+        tags: {
+            veggie: true,
+            sinAzucar: false,
+            sinTacc: false // Harina común
+        }
     },
     {
         name: "Cupcake",
@@ -110,7 +165,12 @@ const productos = [
         desc: "Cupcake de vainilla con frosting de colores.",
         ingredients: ["Harina", "Azúcar", "Huevos", "Vainilla", "Frosting"],
         calories: "250 kcal",
-        section: ["dulces"] // section es un array
+        section: ["dulces"],
+        tags: {
+            veggie: true,
+            sinAzucar: false,
+            sinTacc: false // Harina común
+        }
     },
     {
         name: "Galletas de Avena",
@@ -119,7 +179,12 @@ const productos = [
         desc: "Galletas de avena caseras con pasas.",
         ingredients: ["Avena", "Harina", "Pasas", "Azúcar"],
         calories: "180 kcal",
-        section: ["dulces"] // section es un array
+        section: ["dulces"],
+        tags: {
+            veggie: true,
+            sinAzucar: false,
+            sinTacc: false // Harina común
+        }
     },
     {
         name: "Muffin de Arándanos",
@@ -128,7 +193,12 @@ const productos = [
         desc: "Muffin esponjoso con arándanos frescos.",
         ingredients: ["Harina", "Arándanos", "Azúcar", "Huevos"],
         calories: "220 kcal",
-        section: ["dulces"] // section es un array
+        section: ["dulces"],
+        tags: {
+            veggie: true,
+            sinAzucar: false,
+            sinTacc: false // Harina común
+        }
     },
     {
         name: "Cheesecake",
@@ -137,7 +207,12 @@ const productos = [
         desc: "Cheesecake cremoso con salsa de frutos rojos.",
         ingredients: ["Queso crema", "Galletas", "Frutos rojos", "Azúcar"],
         calories: "400 kcal",
-        section: ["dulces"] // section es un array
+        section: ["dulces"],
+        tags: {
+            veggie: true,
+            sinAzucar: false,
+            sinTacc: false // Galletas tienen TACC
+        }
     },
     {
         name: "Agua Tónica",
@@ -146,7 +221,12 @@ const productos = [
         desc: "Refrescante agua tónica con gas.",
         ingredients: ["Agua", "Quinina", "Gas"],
         calories: "0 kcal",
-        section: ["bebidas"]
+        section: ["bebidas"],
+        tags: {
+            veggie: true,
+            sinAzucar: true,
+            sinTacc: true
+        }
     },
     {
         name: "Limonada",
@@ -155,7 +235,12 @@ const productos = [
         desc: "Limonada casera con limones frescos.",
         ingredients: ["Limón", "Agua", "Azúcar"],
         calories: "80 kcal",
-        section: ["bebidas"] // section es un array
+        section: ["bebidas"],
+        tags: {
+            veggie: true,
+            sinAzucar: false,
+            sinTacc: true
+        }
     },
     {
         name: "Té Helado",
@@ -164,7 +249,12 @@ const productos = [
         desc: "Té helado refrescante con limón.",
         ingredients: ["Té", "Limón", "Azúcar"],
         calories: "60 kcal",
-        section: ["bebidas"] // section es un array
+        section: ["bebidas"],
+        tags: {
+            veggie: true,
+            sinAzucar: false,
+            sinTacc: true
+        }
     },
     {
         name: "Gaseosa",
@@ -173,7 +263,12 @@ const productos = [
         desc: "Gaseosa de varios sabores.",
         ingredients: ["Agua carbonatada", "Azúcar", "Saborizante"],
         calories: "100 kcal",
-        section: ["bebidas"] // section es un array
+        section: ["bebidas"],
+        tags: {
+            veggie: true,
+            sinAzucar: false,
+            sinTacc: true
+        }
     },
     {
         name: "Agua saborizada",
@@ -182,7 +277,12 @@ const productos = [
         desc: "Agua con rodajas de pepino y menta.",
         ingredients: ["Agua", "Pepino", "Menta"],
         calories: "0 kcal",
-        section: ["bebidas"] // section es un array
+        section: ["bebidas"],
+        tags: {
+            veggie: true,
+            sinAzucar: true,
+            sinTacc: true
+        }
     },
     {
         name: "Empanadas de Carne",
@@ -191,7 +291,12 @@ const productos = [
         desc: "Empanadas de carne jugosas y sabrosas.",
         ingredients: ["Harina", "Carne", "Cebolla", "Especias"],
         calories: "250 kcal",
-        section: ["salados"] // section es un array
+        section: ["salados"],
+        tags: {
+            veggie: false,
+            sinAzucar: true,
+            sinTacc: false // Harina común
+        }
     },
     {
         name: "Papas Fritas",
@@ -200,7 +305,12 @@ const productos = [
         desc: "Papas fritas crujientes y doradas.",
         ingredients: ["Papas", "Aceite", "Sal"],
         calories: "300 kcal",
-        section: ["salados"] // section es un array
+        section: ["salados"],
+        tags: {
+            veggie: true,
+            sinAzucar: true,
+            sinTacc: true
+        }
     },
     {
         name: "Nachos con Queso",
@@ -209,7 +319,12 @@ const productos = [
         desc: "Nachos con queso fundido y jalapeños.",
         ingredients: ["Nachos", "Queso", "Jalapeños"],
         calories: "400 kcal",
-        section: ["salados"] // section es un array
+        section: ["salados"],
+        tags: {
+            veggie: true,
+            sinAzucar: true,
+            sinTacc: false // Nachos suelen tener TACC
+        }
     },
     {
         name: "Mini Pizzas",
@@ -218,7 +333,12 @@ const productos = [
         desc: "Mini pizzas con tomate, queso y pepperoni.",
         ingredients: ["Harina", "Tomate", "Queso", "Pepperoni"],
         calories: "350 kcal",
-        section: ["salados"] // section es un array
+        section: ["salados"],
+        tags: {
+            veggie: false,
+            sinAzucar: true,
+            sinTacc: false // Harina común
+        }
     },
     {
         name: "Sándwich de Pollo",
@@ -227,7 +347,12 @@ const productos = [
         desc: "Sándwich de pollo con lechuga y mayonesa.",
         ingredients: ["Pan", "Pollo", "Lechuga", "Mayonesa"],
         calories: "320 kcal",
-        section: ["salados"] // section es un array
+        section: ["salados"],
+        tags: {
+            veggie: false,
+            sinAzucar: true,
+            sinTacc: false // El pan tiene TACC
+        }
     },
     {
         name: "Cerveza Artesanal",
@@ -236,7 +361,12 @@ const productos = [
         desc: "Cerveza artesanal rubia, IPA o negra.",
         ingredients: ["Agua", "Malta", "Lúpulo", "Levadura"],
         calories: "150 kcal",
-        section: ["alcohol"] // section es un array
+        section: ["alcohol"],
+        tags: {
+            veggie: true,
+            sinAzucar: true,
+            sinTacc: true
+        }
     },
     {
         name: "Vino Tinto",
@@ -245,7 +375,12 @@ const productos = [
         desc: "Copa de vino tinto Malbec o Cabernet Sauvignon.",
         ingredients: ["Uvas"],
         calories: "120 kcal",
-        section: ["alcohol"] // section es un array
+        section: ["alcohol"],
+        tags: {
+            veggie: true,
+            sinAzucar: true,
+            sinTacc: true
+        }
     },
     {
         name: "Fernet con Coca",
@@ -254,7 +389,12 @@ const productos = [
         desc: "Trago de Fernet con Coca Cola.",
         ingredients: ["Fernet", "Coca Cola"],
         calories: "180 kcal",
-        section: ["alcohol"] // section es un array
+        section: ["alcohol"],
+        tags: {
+            veggie: true,
+            sinAzucar: false,
+            sinTacc: true
+        }
     },
     {
         name: "Campari",
@@ -263,7 +403,12 @@ const productos = [
         desc: "Trago de Campari con naranja.",
         ingredients: ["Campari", "Naranja"],
         calories: "180 kcal",
-        section: ["alcohol"] // section es un array
+        section: ["alcohol"],
+        tags: {
+            veggie: true,
+            sinAzucar: true,
+            sinTacc: true
+        }
     },
     {
         name: "Gancia",
@@ -272,6 +417,11 @@ const productos = [
         desc: "Trago de Gancia con limón.",
         ingredients: ["Gancia", "Limon"],
         calories: "180 kcal",
-        section: ["alcohol"] // section es un array
+        section: ["alcohol"],
+        tags: {
+            veggie: true,
+            sinAzucar: true,
+            sinTacc: true
+        }
     }
 ];
