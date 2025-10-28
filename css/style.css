@@ -1,108 +1,458 @@
-/* ==================================== */
-/* Estilos Globales y de Contenedores */
-/* ==================================== */
-
-/* Estilo para el cuerpo de la página */
+html,
 body {
-    background: #f8f8f8; /* Color de fondo general, suave y neutro */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f8f8f8;
+    /* Fondo general suave */
 }
 
 main {
     min-height: 100vh;
+    /* Asegura que main ocupe al menos la altura de la pantalla */
 }
 
-/* Estilo para la tarjeta principal del menú */
+header {
+    /* Estilos para el encabezado */
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
+    max-width: 26.25rem; /* 420px */
+    min-height: 30vh;
+    position: relative; /* Para posicionar el footer */
+    overflow: hidden; /* Oculta desbordamientos */  
+    padding: 1rem; /* Agrega un espacio alrededor del contenido */
+    text-align: center; /* Asegura que el texto también esté centrado */
+}
+
+.header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.5);
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-top: 2rem
+}
+
+header .header-logo {
+    max-height: 80px;
+    margin-bottom: 0.5rem;
+    object-fit: contain;
+    border-radius: 1rem;
+    background-color: #fff;
+    padding: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(13, 110, 253, 0.7), /* Un brillo principal */
+                0 0 20px rgba(13, 110, 253, 0.3); /* Un brillo más extendido y suave */
+}
+
+header h1 {
+    font-size: 1.5rem; /* Ajusta el tamaño del nombre */
+    margin-bottom: 0.25rem; /* Espacio entre el nombre y el texto de Pino IT */
+}
+
+header small {
+    font-size: 0.8rem; /* Ajusta el tamaño del texto de Pino IT */
+}
+
+/* Tarjeta principal del menú */
+
+.menu-scroll-container {
+    position: relative;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding-right: 0.5rem; /* Evita que el scroll tape el texto */
+}
+
 .menu-card {
-    position: relative; /* Clave para posicionar el footer de forma absoluta dentro de la tarjeta */
-    overflow: hidden; /* Oculta cualquier contenido que se desborde, como el footer al deslizarse */
-    background: #fff; /* Fondo blanco para la tarjeta */
-    border-radius: 16px; /* Bordes redondeados para un diseño moderno */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, .1); /* Sombra sutil para dar profundidad */
-    max-width: 425px; /* Ancho máximo para mantener el diseño en móviles */
-    min-height: calc(100vh - 45px); /* Altura mínima para ocupar casi toda la pantalla */
+    padding-top: 0.8rem;
+    background: #fff;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
+    max-width: 26.25rem;
+    /* 420px */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* Para posicionar el footer */
+    overflow: hidden;
+    /* Oculta desbordamientos */
+    min-height: calc(100vh - 45px);
+    /* Altura mínima */
 }
 
-/* ==================================== */
-/* Estilos de los Componentes del Menú */
-/* ==================================== */
 
-/* Estilos para las miniaturas de las imágenes del menú */
+/* Contenido de las pestañas */
+.tab-content {
+    position: relative;
+    max-height: 20rem; /* Ajusta esta altura para que 3.5 productos sean visibles */
+    overflow-y: auto; /* Scroll vertical */
+    padding-right: 0.5rem; /* Evita que el scroll tape el texto */
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    max-height: 31.25rem; /* Altura máxima */
+    -webkit-overflow-scrolling: touch; /* Scroll fluido en iOS */
+    /* Altura máxima */
+}
+
+
+/* Componentes del Menú */
 .thumb {
-    width: 70px;
-    height: 70px;
-    border-radius: 10px;
-    object-fit: cover; /* Asegura que la imagen no se deforme */
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 0.625rem;
+    object-fit: cover;
+    /* Ajusta la imagen */
+    object-position: center;
+    flex-shrink: 0;
+    /* Evita que se encoja */
 }
 
-/* Estilo para cada fila de ítem del menú */
 .menu-item {
-    border-bottom: 1px solid #eee; /* Línea separadora para cada ítem */
-    padding: 12px 0; /* Espaciado interno vertical */
+  border-bottom: 0.0625rem solid #eee;
+  padding: 0.75rem 0;
+  display: flex; /* Mantenemos flex para alinear el contenido */
 }
 
-/* Estilo para el logo en la parte superior del menú */
+/* Logo del menú */
 .menu-logo {
-    width: 120px;
+    width: 7.5rem;
+    /* 120px */
     height: auto;
     opacity: 0.9;
 }
 
-/* ==================================== */
-/* Estilos del Footer y su Animación */
-/* ==================================== */
 
-/* Estilos base para el footer */
-footer {
-    /* Posicionamiento para que se deslice dentro de la tarjeta */
+.icon-tabs .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    background: transparent;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    padding: 10px;
+}
+
+.icon-tabs .nav-link.active {
+    transform: scale(1.1);
+    filter: saturate(1.5);
+}
+
+.tab-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    /* Color del marco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    /* Fondo opcional */
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-tabs .nav-link.active .tab-icon {
+    border-color: #0d6efd;
+    /* Azul vibrante */
+    transform: scale(1.1);
+    /* Sutil agrandamiento */
+    box-shadow: 0 0 8px rgba(13, 110, 253, 0.4);
+}
+
+.tab-icon i {
+    font-size: 22px;
+}
+
+.nav-tabs .nav-link {
+    color: #000;
+    border-bottom: 1px solid white;
+    /* color normal */
+}
+
+.nav-tabs .nav-link.active {
+    font-weight: bold;
+    color: #0d6efd;
+    /* color cuando está activa */
+}
+
+.nav-scroll-wrapper {
+    overflow-x: auto;
+    /* solo scroll horizontal */
+    overflow-y: hidden;
+    /* oculta scroll vertical */
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    /* evita saltos de línea */
+}
+
+
+.nav-scroll-wrapper::-webkit-scrollbar {
+    width: 5px; /* Ancho de la barra */
+    height: 5px;
+}
+
+.nav-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #0d6efd; /* Color del "pulgar" */
+    border-radius: 5px;
+}
+
+.nav-scroll-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color del "track" */
+}
+
+/* Opcional: Hover effect */
+.nav-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #0b5ed7;
+}
+
+.tab-content::-webkit-scrollbar {
+    width: 5px; /* Ancho de la barra */
+    height: 5px;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+    background: #0d6efd; /* Color del "pulgar" */
+    border-radius: 5px;
+}
+
+.tab-content::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color del "track" */
+}
+
+/* Opcional: Hover effect */
+.tab-content::-webkit-scrollbar-thumb:hover {
+    background: #0b5ed7;
+}
+
+#menuTabs {
+    flex-wrap: nowrap;
+    /* evita que las categorías bajen de línea */
+}
+
+/* Estilos para el scroll de productos */
+.products-scroll .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-align: start;
+    /* Efecto "snap" al hacer scroll */
+}
+
+.modal-dialog {
+    width: 90% !important;
+    max-width: 24.25rem !important; /* 420px - el mismo que .menu-card */
+    margin: 0 auto !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+.modal-open {
+    padding-right: 0 !important;
+}
+/* Asegura que el contenido del modal se ajuste correctamente */
+.modal-content {
+    width: 100%;
+    border-radius: 1rem;
+    max-height: 70vh !important; /* Limita la altura al 70% de la ventana */
+    overflow-y: auto !important; /* Añade scroll si el contenido excede la altura */
+}
+
+/* Estilos para el botón de cerrar en el carrusel */
+.modal-content .btn-close {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    z-index: 10 !important; /* Asegura que esté por encima del carrusel */
+    background-color: transparent !important; /* Fondo transparente */
+    border: none !important; /* Elimina el borde */
+    padding: 0 !important; /* Elimina el padding */
+    opacity: 1 !important; /* Asegura que sea visible */
+    width: auto !important; /* Ancho automático */
+    height: auto !important; /* Alto automático */
+    --bs-btn-close-bg: transparent !important; /* Fondo transparente */
+}
+
+.modal-content .btn-close i {
+    font-size: 1.5rem !important; /* Ajusta el tamaño del icono */
+    color: #fff !important; /* Color blanco */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5) !important; /* Sombra para mejorar la visibilidad */
+}
+
+/* Estilos para el carrusel */
+.modal-content .carousel-inner {
+    border-radius: 1rem;
+    overflow: hidden;
+    max-height: 25vh;
+    width: 100%;
+}
+
+/* Estilos para el scrollbar del modal */
+.modal-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Para pantallas mayores a 425px */
+@media (min-width: 426px) {
+    .modal-dialog {
+        width: 24.25rem !important; /* Ancho fijo para pantallas grandes */
+    }
+}
+
+/* Prevenir que Bootstrap modifique estos estilos con sus media queries */
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 24.25rem !important;
+        margin: 0 auto !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+}
+
+/* Ajustes para el contenido del modal */
+.modal-body {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Estilo para el pie de página del modal donde va el precio */
+.modal-footer {
+    border-top: 1px solid #eee; /* Línea separadora sutil */
+    background-color: #f8f9fa; /* Fondo ligeramente gris */
+    border-bottom-left-radius: 1rem; /* Bordes redondeados acordes al modal */
+    border-bottom-right-radius: 1rem;
+}
+
+#productModalPrice {
+    margin: 0; /* Quitamos el margen por defecto del párrafo */
+}
+
+/* Ocultamos la cabecera del modal que ya no usamos */
+.modal-header {
+    display: none;
+}
+
+/* Contenedor del carrusel para posicionamiento relativo */
+#productCarousel {
+    position: relative;
+}
+
+/* Estilos para el título sobre el carrusel (CORREGIDO) */
+#productModalLabel {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 100; /* Lo coloca por encima del contenido principal */
-    
-    /* Propiedades de la animación de deslizamiento */
-    transform: translateY(calc(100% - 24px)); /* Oculta el footer excepto la "lengüeta" de 24px */
-    transition: transform 0.5s ease-in-out; /* Define una transición suave */
-    
-    /* Ajustes de diseño de la forma */
+    z-index: 10;
+    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    /* Ajustamos el padding para mejor alineación vertical */
+    padding: 1.5rem 1rem 0.75rem 1rem;
+    margin: 0;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho/alto */
+}
+
+/* Contenedor para los íconos de tags */
+.product-tags {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 11; /* Un poco más que el título para que no se superpongan */
+    padding: 1rem;
+    display: flex;
+    gap: 0.5rem; /* Espacio entre los íconos */
+}
+
+/* Estilo base para cada ícono (estado "apagado") */
+.tag-icon {
+    font-size: 1.30rem;
+    color: white;
+    padding: 0.1rem; /* Círculo perfecto */
+    opacity: 0.5; /* Lo hacemos un poco transparente */
+    transition: all 0.3s ease; /* Transición suave */
+    display: none; /* Por defecto están ocultos */
+}
+
+/* Estilo para el ícono "prendido" */
+.tag-icon.active {
+    display: inline-block; /* Hacemos visible el ícono */
+    opacity: 1; /* Opacidad completa */
+    color: white; /* Un color blanco para indicar que está activo */
+    text-shadow: 0 0 5px black;
+}
+
+/* Footer y su Animación */
+footer {
+    position: absolute; /* Cambia a relative */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    /* Encima del contenido */
+    transform: translateY(calc(100% - 24px));
+    transition: transform 0.5s ease-in-out;
+    /* Animación suave */
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
 
-/* Estado activo del footer, visible al 100% */
+/* Footer visible */
 footer.show {
-    transform: translateY(0); /* Desliza el footer para que sea completamente visible */
+    transform: translateY(0);
+    /* Desliza hacia arriba */
 }
 
-/* Estilos para los íconos de redes sociales */
+/* Íconos de redes sociales en el footer */
 .footer_redes {
-    /* Clases de Bootstrap como 'd-flex' y 'justify-content-center' manejan la alineación */
-    font-size: 1.5rem; /* Tamaño de fuente para los íconos */
+    font-size: 2.1rem; /* Tamaño de los íconos */
 }
 
-/* Estilos para el contenedor del mapa responsive */
+/* Contenedor del mapa responsive */
 .mapa {
     position: relative;
     overflow: hidden;
     margin: 0 auto;
     border: 0;
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        height: 200px;
+    }
+
+    img {
     width: 100%;
-    max-width: 350px;
-    height: 150px;
+        height: auto;
+    }
 }
 
-/* Estilo para el botón que activa/desactiva el footer */
+/* Botón para mostrar/ocultar el footer */
 #toggleFooterBtn {
-    /* Posicionamiento y forma del "asa" para tirar del footer */
     position: absolute;
-    top: -10px; /* Eleva el botón para que se vea por encima del footer */
+    top: -10px;
+    /* Encima del footer */
     left: 50%;
-    transform: translateX(-50%); /* Centra el botón horizontalmente */
-    
-    /* Diseño y accesibilidad */
+    transform: translateX(-50%);
+    /* Centrado horizontalmente */
     background-color: #0d6efd;
     color: white;
-    border-radius: 50%; /* Lo hace circular */
+    border-radius: 50%;
+    /* Circular */
     width: 80px;
     height: 35px;
     font-size: 20px;
@@ -111,3 +461,4 @@ footer.show {
     justify-content: center;
     cursor: pointer;
 }
+
