@@ -102,11 +102,13 @@ header small {
     padding-right: 0.5rem; /* Evita que el scroll tape el texto */
     -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-    max-height: 31.25rem; /* Altura máxima */
-    -webkit-overflow-scrolling: touch; /* Scroll fluido en iOS */
-    /* Altura máxima */
+    max-height: 31.25rem; /* Altura máxima */  
 }
 
+.tab-content.no-fade {
+    -webkit-mask-image: none;
+    mask-image: none;
+}
 
 /* Componentes del Menú */
 .thumb {
@@ -117,7 +119,6 @@ header small {
     /* Ajusta la imagen */
     object-position: center;
     flex-shrink: 0;
-    /* Evita que se encoja */
 }
 
 .menu-item {
@@ -162,6 +163,7 @@ header small {
     background-color: #fff;
     /* Fondo opcional */
     transition: border-color 0.3s ease, transform 0.3s ease;
+
 }
 
 .icon-tabs .nav-link.active .tab-icon {
@@ -462,3 +464,4 @@ footer.show {
     cursor: pointer;
 }
 
+/* --- Estilos Responsivos --- */

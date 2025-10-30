@@ -10,10 +10,25 @@ document.addEventListener("DOMContentLoaded", () => {
      * Representa las secciones del menú.
      */
     const sections = document.querySelectorAll(".menu-section");
+    
+        const tabContentContainer = document.querySelector(".tab-content");
+        function checkScrollFade() {
+            const isScrollable = tabContentContainer.scrollHeight > tabContentContainer.clientHeight;
+            const isAtBottom = tabContentContainer.scrollHeight - tabContentContainer.scrollTop <= tabContentContainer.clientHeight + 1;
+
+            if (!isScrollable || isAtBottom) {
+                tabContentContainer.classList.add('no-fade');
+            } else {
+                tabContentContainer.classList.remove('no-fade');
+            }
+        }
+        // Llama a la función cada vez que el usuario hace scroll
+        tabContentContainer.addEventListener('scroll', checkScrollFade);
 
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
-            // reset
+            setTimeout(checkScrollFade, 50);
+            // desactivar
             tabs.forEach(t => t.classList.remove("active"));
             sections.forEach(s => s.classList.add("d-none"));
 
@@ -135,4 +150,5 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
+    checkScrollFade();
 });
