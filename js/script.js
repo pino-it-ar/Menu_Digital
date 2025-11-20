@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
      * Representa las secciones del menú.
      */
     const sections = document.querySelectorAll(".menu-section");
-    
+    /* Contenedor de contenido de pestañas */
         const tabContentContainer = document.querySelector(".tab-content");
         function checkScrollFade() {
             const isScrollable = tabContentContainer.scrollHeight > tabContentContainer.clientHeight;

@@ -104,6 +104,9 @@ header small {
     mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
     max-height: 31.25rem; /* Altura máxima */  
 }
+.tab-content::after {
+    
+}
 
 .tab-content.no-fade {
     -webkit-mask-image: none;
@@ -464,4 +467,106 @@ footer.show {
     cursor: pointer;
 }
 
-/* --- Estilos Responsivos --- */
+/* ========================================= */
+/* DISEÑO RESPONSIVE (Escritorio/Tablet)   */
+/* ========================================= */
+
+/* Se activa cuando la pantalla mide más de 768px (Tablets y PC) */
+@media (min-width: 768px) {
+
+    /* 1. Aumentar el ancho del contenedor principal al 70% */
+    header,
+    .menu-card {
+        max-width: 70%; /* Ocupa el 70% de la pantalla */
+        margin-left: auto; /* Centrado automático */
+        margin-right: auto;
+    }
+
+    /* 2. Ajustes del Header más grande */
+    header {
+        min-height: 35vh; /* Un poco más alto para que luzca la imagen */
+    }
+    header .header-logo {
+        width: 120px; /* Logo más grande */
+        height: 120px;
+    }
+    header h1 {
+        font-size: 2.5rem; /* Título más impactante */
+    }
+    header small {
+        font-size: 1.2rem;
+    }
+
+    /* 3. Navbar más grande y centrada */
+    .nav-scroll-wrapper {
+        display: flex;
+        justify-content: center; /* Centra los íconos */
+        overflow-x: visible; /* Quita el scroll horizontal si entran todos */
+    }
+    
+    .tab-icon {
+        width: 60px; /* Íconos más grandes */
+        height: 60px;
+    }
+    .tab-icon i {
+        font-size: 1.8rem;
+    }
+    .icon-tabs .nav-link span {
+        font-size: 1.1rem; /* Texto de la pestaña más grande */
+        margin-top: 0.5rem;
+    }
+    /* Espaciado entre pestañas */
+    .icon-tabs .nav-item {
+        margin: 0 1rem; 
+    }
+
+    /* 4. Productos: Misma estructura, tamaño XL */
+    .menu-item {
+        padding: 1.5rem 1rem; /* Más aire arriba y abajo */
+    }
+
+    /* Imagen del producto más grande */
+    .thumb {
+        width: 8rem; /* Aprox 128px */
+        height: 8rem;
+        border-radius: 1rem; /* Bordes un poco más redondeados acorde al tamaño */
+        margin-right: 1.5rem !important; /* Más separación con el texto */
+    }
+
+    /* Textos del producto más grandes */
+    .menu-item p.fw-semibold {
+        font-size: 1.5rem; /* Nombre del plato */
+        margin-bottom: 0.5rem;
+    }
+    
+    .menu-item small.text-muted {
+        font-size: 1.1rem; /* Descripción */
+        line-height: 1.6; /* Mejor lectura */
+    }
+
+    .menu-item span.fw-bold {
+        font-size: 1.5rem; /* Precio grande */
+        min-width: 100px; /* Para que los precios se alineen bien */
+        text-align: right;
+    }
+
+    /* 5. Ajuste del Modal para pantalla grande */
+    /* Sobrescribimos los estilos forzados (!important) del móvil */
+    .modal-dialog {
+        max-width: 50% !important; /* El modal ocupa la mitad de la pantalla */
+        width: 50% !important;
+        position: relative !important; /* Volvemos a la posición normal de Bootstrap */
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        margin: 3rem auto !important; /* Centrado vertical con margen */
+    }
+
+    .modal-content {
+        max-height: 85vh !important;
+    }
+    
+    .modal-content .carousel-inner {
+        max-height: 40vh; /* Imagen del modal más grande */
+    }
+}
