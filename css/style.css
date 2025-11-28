@@ -547,7 +547,6 @@ footer.show {
         margin-top: 0.5rem; /* Separamos más del menú */
         margin-bottom: 2rem !important; /* Separamos más del footer */
         width: 90%; /* Que no toque los bordes */
-        border-radius: 1rem; /* Bordes redondeados */
     }
     
     .mapa iframe {
