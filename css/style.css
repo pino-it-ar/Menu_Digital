@@ -36,14 +36,17 @@ header {
 }
 
 .header-content {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    padding-top: 2rem
+    padding-top: 0;
 }
 
 header .header-logo {
@@ -89,8 +92,9 @@ header small {
     /* Para posicionar el footer */
     overflow: hidden;
     /* Oculta desbordamientos */
-    min-height: calc(100vh - 45px);
-    /* Altura mínima */
+    min-height: auto; /*Usamos 'auto' o una altura mínima menor para que no sobre espacio */
+    padding-bottom: 2.5rem;
+
 }
 
 
@@ -100,13 +104,30 @@ header small {
     max-height: 20rem; /* Ajusta esta altura para que 3.5 productos sean visibles */
     overflow-y: auto; /* Scroll vertical */
     padding-right: 0.5rem; /* Evita que el scroll tape el texto */
-    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-    max-height: 31.25rem; /* Altura máxima */
-    -webkit-overflow-scrolling: touch; /* Scroll fluido en iOS */
-    /* Altura máxima */
+    max-height: 31.25rem; /* Altura máxima */  
 }
 
+/* Estado 1: Normal -> Sin transparencia */
+.tab-content.no-fade {
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+/* Estado 2: Abajo de todo -> Transparencia solo ARRIBA */
+.tab-content.fade-top {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 100%);
+}
+/* Estado 3: Arriba de todo -> Transparencia solo ABAJO */
+.tab-content.fade-bottom {
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
+}
+/* Estado 4: En el medio -> Transparencia ARRIBA y ABAJO */
+.tab-content.fade-both {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
 
 /* Componentes del Menú */
 .thumb {
@@ -117,7 +138,6 @@ header small {
     /* Ajusta la imagen */
     object-position: center;
     flex-shrink: 0;
-    /* Evita que se encoja */
 }
 
 .menu-item {
@@ -162,6 +182,7 @@ header small {
     background-color: #fff;
     /* Fondo opcional */
     transition: border-color 0.3s ease, transform 0.3s ease;
+
 }
 
 .icon-tabs .nav-link.active .tab-icon {
@@ -462,3 +483,74 @@ footer.show {
     cursor: pointer;
 }
 
+@media (min-width: 768px) {
+
+    /* --- ESTRUCTURA --- */
+    header,
+    .menu-card {
+        width: 100%; 
+        max-width: 100%; /* Quitamos el límite */
+        margin: 0 auto;  /* Mantenemos el centrado */
+    }
+    
+
+    .menu-card {
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    /* Mantenemos el scroll activo por si la pantalla es chica */
+    .nav-scroll-wrapper {
+        display: flex;
+        overflow-x: auto; /* Permite scroll si no entran */
+        /* Quitamos justify-content: center porque rompe el scroll en pantallas chicas */
+    }
+
+    #menuTabs {
+        margin: 0 auto; 
+        width: fit-content; /* Se ajusta al contenido */
+    }
+    
+    .tab-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.5rem;
+    }
+    
+    .nav-item {
+        margin: 0 1rem;
+    }
+
+    /* --- PRODUCTOS --- */
+    .menu-item {
+        padding: 1.5rem 1rem;
+    }
+
+    .thumb {
+        width: 7rem;
+        height: 7rem;
+        margin-right: 2rem !important;
+    }
+
+    .menu-item p.fw-semibold,
+    .menu-item span.fw-bold {
+        font-size: 1.25rem ;
+    }
+
+    .modal-dialog {
+    width: 100% !important;
+    max-width: 30rem !important; /* 420px - el mismo que .menu-card */
+    
+    }
+
+    .mapa {
+        height: 25vh ; /* Aumentamos mucho la altura del contenedor */
+        margin-top: 0.5rem; /* Separamos más del menú */
+        margin-bottom: 2rem !important; /* Separamos más del footer */
+        width: 90%; /* Que no toque los bordes */
+    }
+    
+    .mapa iframe {
+        height: 100%; /* El mapa ocupa toda la altura nueva */
+    }
+    
+}

@@ -10,10 +10,46 @@ document.addEventListener("DOMContentLoaded", () => {
      * Representa las secciones del menú.
      */
     const sections = document.querySelectorAll(".menu-section");
+    /* Contenedor de contenido de pestañas */
+        const tabContentContainer = document.querySelector(".tab-content");
+        function checkScrollFade() {
+            const scrollTop = tabContentContainer.scrollTop; // Cuánto bajaste
+            const scrollHeight = tabContentContainer.scrollHeight; // Altura total contenido
+            const clientHeight = tabContentContainer.clientHeight; // Altura visible
+            const tolerance = 2; // Pequeño margen de error en pixeles
+
+        // Limpiamos todas las clases primero
+        tabContentContainer.classList.remove('no-fade', 'fade-top', 'fade-bottom', 'fade-both');
+
+        // 1. ¿Hay suficiente contenido para scrollear?
+        if (scrollHeight <= clientHeight) {
+            tabContentContainer.classList.add('no-fade');
+            return; 
+        }
+
+        // Calculamos si estamos abajo del todo
+        const isAtBottom = (scrollTop + clientHeight) >= (scrollHeight - tolerance);
+        // Calculamos si estamos arriba del todo
+        const isAtTop = scrollTop <= tolerance;
+
+        if (isAtTop) {
+            // Caso: Estamos arriba -> Solo fade abajo
+            tabContentContainer.classList.add('fade-bottom');
+        } else if (isAtBottom) {
+            // Caso: Estamos abajo -> Solo fade arriba
+            tabContentContainer.classList.add('fade-top');
+        } else {
+            // Estamos en el medio -> Fade arriba y abajo
+            tabContentContainer.classList.add('fade-both');
+        }
+    }
+        // Llama a la función cada vez que el usuario hace scroll
+        tabContentContainer.addEventListener('scroll', checkScrollFade);
 
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
-            // reset
+            setTimeout(checkScrollFade, 50);
+            // desactivar
             tabs.forEach(t => t.classList.remove("active"));
             sections.forEach(s => s.classList.add("d-none"));
 
@@ -135,4 +171,5 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
+    checkScrollFade();
 });
