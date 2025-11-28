@@ -36,14 +36,17 @@ header {
 }
 
 .header-content {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    padding-top: 2rem
+    padding-top: 0;
 }
 
 header .header-logo {
@@ -89,8 +92,9 @@ header small {
     /* Para posicionar el footer */
     overflow: hidden;
     /* Oculta desbordamientos */
-    min-height: calc(100vh - 45px);
-    /* Altura mínima */
+    min-height: auto; /*Usamos 'auto' o una altura mínima menor para que no sobre espacio */
+    padding-bottom: 2.5rem;
+
 }
 
 
@@ -100,17 +104,29 @@ header small {
     max-height: 20rem; /* Ajusta esta altura para que 3.5 productos sean visibles */
     overflow-y: auto; /* Scroll vertical */
     padding-right: 0.5rem; /* Evita que el scroll tape el texto */
-    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
     max-height: 31.25rem; /* Altura máxima */  
 }
-.tab-content::after {
-    
-}
 
+/* Estado 1: Normal -> Sin transparencia */
 .tab-content.no-fade {
     -webkit-mask-image: none;
     mask-image: none;
+}
+
+/* Estado 2: Abajo de todo -> Transparencia solo ARRIBA */
+.tab-content.fade-top {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 100%);
+}
+/* Estado 3: Arriba de todo -> Transparencia solo ABAJO */
+.tab-content.fade-bottom {
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
+}
+/* Estado 4: En el medio -> Transparencia ARRIBA y ABAJO */
+.tab-content.fade-both {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
 }
 
 /* Componentes del Menú */
@@ -467,106 +483,75 @@ footer.show {
     cursor: pointer;
 }
 
-/* ========================================= */
-/* DISEÑO RESPONSIVE (Escritorio/Tablet)   */
-/* ========================================= */
-
-/* Se activa cuando la pantalla mide más de 768px (Tablets y PC) */
 @media (min-width: 768px) {
 
-    /* 1. Aumentar el ancho del contenedor principal al 70% */
+    /* --- ESTRUCTURA --- */
     header,
     .menu-card {
-        max-width: 70%; /* Ocupa el 70% de la pantalla */
-        margin-left: auto; /* Centrado automático */
-        margin-right: auto;
+        width: 100%; 
+        max-width: 100%; /* Quitamos el límite */
+        margin: 0 auto;  /* Mantenemos el centrado */
+    }
+    
+
+    .menu-card {
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
 
-    /* 2. Ajustes del Header más grande */
-    header {
-        min-height: 35vh; /* Un poco más alto para que luzca la imagen */
-    }
-    header .header-logo {
-        width: 120px; /* Logo más grande */
-        height: 120px;
-    }
-    header h1 {
-        font-size: 2.5rem; /* Título más impactante */
-    }
-    header small {
-        font-size: 1.2rem;
-    }
-
-    /* 3. Navbar más grande y centrada */
+    /* Mantenemos el scroll activo por si la pantalla es chica */
     .nav-scroll-wrapper {
         display: flex;
-        justify-content: center; /* Centra los íconos */
-        overflow-x: visible; /* Quita el scroll horizontal si entran todos */
+        overflow-x: auto; /* Permite scroll si no entran */
+        /* Quitamos justify-content: center porque rompe el scroll en pantallas chicas */
+    }
+
+    #menuTabs {
+        margin: 0 auto; 
+        width: fit-content; /* Se ajusta al contenido */
     }
     
     .tab-icon {
-        width: 60px; /* Íconos más grandes */
-        height: 60px;
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.5rem;
     }
-    .tab-icon i {
-        font-size: 1.8rem;
-    }
-    .icon-tabs .nav-link span {
-        font-size: 1.1rem; /* Texto de la pestaña más grande */
-        margin-top: 0.5rem;
-    }
-    /* Espaciado entre pestañas */
-    .icon-tabs .nav-item {
-        margin: 0 1rem; 
+    
+    .nav-item {
+        margin: 0 1rem;
     }
 
-    /* 4. Productos: Misma estructura, tamaño XL */
+    /* --- PRODUCTOS --- */
     .menu-item {
-        padding: 1.5rem 1rem; /* Más aire arriba y abajo */
+        padding: 1.5rem 1rem;
     }
 
-    /* Imagen del producto más grande */
     .thumb {
-        width: 8rem; /* Aprox 128px */
-        height: 8rem;
-        border-radius: 1rem; /* Bordes un poco más redondeados acorde al tamaño */
-        margin-right: 1.5rem !important; /* Más separación con el texto */
+        width: 7rem;
+        height: 7rem;
+        margin-right: 2rem !important;
     }
 
-    /* Textos del producto más grandes */
-    .menu-item p.fw-semibold {
-        font-size: 1.5rem; /* Nombre del plato */
-        margin-bottom: 0.5rem;
-    }
-    
-    .menu-item small.text-muted {
-        font-size: 1.1rem; /* Descripción */
-        line-height: 1.6; /* Mejor lectura */
-    }
-
+    .menu-item p.fw-semibold,
     .menu-item span.fw-bold {
-        font-size: 1.5rem; /* Precio grande */
-        min-width: 100px; /* Para que los precios se alineen bien */
-        text-align: right;
+        font-size: 1.25rem ;
     }
 
-    /* 5. Ajuste del Modal para pantalla grande */
-    /* Sobrescribimos los estilos forzados (!important) del móvil */
     .modal-dialog {
-        max-width: 50% !important; /* El modal ocupa la mitad de la pantalla */
-        width: 50% !important;
-        position: relative !important; /* Volvemos a la posición normal de Bootstrap */
-        top: auto !important;
-        left: auto !important;
-        transform: none !important;
-        margin: 3rem auto !important; /* Centrado vertical con margen */
+    width: 100% !important;
+    max-width: 30rem !important; /* 420px - el mismo que .menu-card */
+    
     }
 
-    .modal-content {
-        max-height: 85vh !important;
+    .mapa {
+        height: 25vh ; /* Aumentamos mucho la altura del contenedor */
+        margin-top: 0.5rem; /* Separamos más del menú */
+        margin-bottom: 2rem !important; /* Separamos más del footer */
+        width: 90%; /* Que no toque los bordes */
+        border-radius: 1rem; /* Bordes redondeados */
     }
     
-    .modal-content .carousel-inner {
-        max-height: 40vh; /* Imagen del modal más grande */
+    .mapa iframe {
+        height: 100%; /* El mapa ocupa toda la altura nueva */
     }
+    
 }
